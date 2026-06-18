@@ -20,6 +20,31 @@ import isteVideo from "./assets/iste.mp4";
 import footerLogo from "./assets/iste_footer.png";
 
 /* =========================================================
+    Cursor
+   ========================================================= */
+const PixelCursor = () => {
+  const [pos, setPos] = React.useState({ x: 0, y: 0 });
+
+  React.useEffect(() => {
+    const move = (e: MouseEvent) =>
+      setPos({ x: e.clientX, y: e.clientY });
+
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
+  return (
+    <div
+      style={{
+        left: pos.x,
+        top: pos.y,
+      }}
+      className="fixed w-4 h-4 bg-[#2ee892] pointer-events-none z-[9999]"
+    />
+  );
+};
+
+/* =========================================================
    PARTICLES — floating dots/stars/coins
    ========================================================= */
 const Particles: React.FC = () => {
@@ -990,6 +1015,7 @@ const App: React.FC = () => {
       <Particles />
       <Nav />
       <main className="relative z-10">
+        <PixelCursor />
         <Hero />
         <PromoVideo />
         <About />
