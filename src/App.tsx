@@ -516,8 +516,8 @@ const Events: React.FC = () => {
    ========================================================= */
 const Team: React.FC = () => {
   const team = [
-    { name: "Aarav Sharma", role: "Guild Master / President", skin: "#f1c79b", hair: "#1a1a1a", shirt: "#2ee892", pants: "#14a35d", stats: { code: 92, lead: 88, coffee: 99 }, bio: "Final-year CS. Believes semicolons are a personality." },
-    { name: "Priya Iyer", role: "Quest Giver / VP", skin: "#e8b894", hair: "#5a2a1a", shirt: "#ff5fa2", pants: "#a8327d", stats: { code: 85, lead: 95, coffee: 70 }, bio: "Organizes chaos into calendars. Hosts every event." },
+    { name: "Hritik", role: "Guild Master / President", skin: "#f1c79b", hair: "#1a1a1a", shirt: "#2ee892", pants: "#14a35d", stats: { code: 92, lead: 88, coffee: 99 }, bio: "Final-year CS. Believes semicolons are a personality." },
+    { name: "Pranjal", role: "Quest Giver / VP", skin: "#e8b894", hair: "#5a2a1a", shirt: "#ff5fa2", pants: "#a8327d", stats: { code: 85, lead: 95, coffee: 70 }, bio: "Organizes chaos into calendars. Hosts every event." },
     { name: "Rohan Mehta", role: "Bot Tamer / Tech Lead", skin: "#d9a578", hair: "#2a1a0a", shirt: "#4be1ff", pants: "#1aa3d6", stats: { code: 90, lead: 75, coffee: 80 }, bio: "Speaks fluent Arduino. Once built a roomba that judges you." },
     { name: "Sara Khan", role: "Pixel Mage / Designer", skin: "#f1c79b", hair: "#0a0d14", shirt: "#ffcc4b", pants: "#a8761b", stats: { code: 78, lead: 82, coffee: 65 }, bio: "Crafts the brand. Will fight you over kerning." },
     { name: "Kabir Singh", role: "Circuit Sage / Treasurer", skin: "#c89070", hair: "#3a2a1a", shirt: "#2ee892", pants: "#0a0d14", stats: { code: 80, lead: 70, coffee: 88 }, bio: "Manages the treasury. Soldering iron is his wand." },
