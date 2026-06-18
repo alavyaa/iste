@@ -918,26 +918,26 @@ const Footer: React.FC = () => (
       <span className="h-pixel text-[8px] text-white/40">PRESS [START] TO CONTINUE</span>
     </div>
 
-    <div className="mt-12 flex justify-center">
-  <div className="relative w-[280px] sm:w-[400px] glitch-wrapper">
+    <div className="mt-16 flex justify-center">
+  <div className="relative w-full max-w-6xl py-12 overflow-hidden">
     <img
       src={footerLogo}
       alt="ISTE"
-      className="w-full relative z-10"
+      className="relative z-10 w-full max-w-4xl mx-auto footer-main"
     />
 
     <img
       src={footerLogo}
       alt=""
       aria-hidden="true"
-      className="absolute inset-0 w-full opacity-70 glitch-red"
+      className="absolute inset-0 w-full max-w-4xl mx-auto footer-glitch-red"
     />
 
     <img
       src={footerLogo}
       alt=""
       aria-hidden="true"
-      className="absolute inset-0 w-full opacity-70 glitch-blue"
+      className="absolute inset-0 w-full max-w-4xl mx-auto footer-glitch-blue"
     />
   </div>
 </div>
