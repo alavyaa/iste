@@ -15,7 +15,7 @@ import {
   PixelLandscape,
   CircuitPattern,
 } from "./components/Pixel";
-
+import isteLogo from "./assets/iste.png";
 /* =========================================================
    PARTICLES — floating dots/stars/coins
    ========================================================= */
@@ -78,22 +78,12 @@ const Nav: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 grid grid-cols-4 grid-rows-4 gap-0 pixelated" aria-hidden="true">
-            {[
-              "0120",
-              "1221",
-              "1221",
-              "0120",
-            ].map((row, y) =>
-              row.split("").map((c, x) => (
-                <div
-                  key={`${x}-${y}`}
-                  style={{
-                    background: c === "0" ? "transparent" : c === "1" ? "#0a0d14" : "#2ee892",
-                  }}
-                />
-              ))
-            )}
+         <img
+  src={isteLogo}
+  alt="ISTE Logo"
+  className="w-10 h-10 pixelated object-contain"
+/>
+             
           </div>
           <div className="leading-none">
             <div className="h-pixel text-[11px] text-[#2ee892]">ISTE</div>
