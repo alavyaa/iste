@@ -287,25 +287,26 @@ const Hero: React.FC = () => {
 };
 
 /* =========================================================
-   ABOUT — pixel dialogue boxes
+   ISTE VIDEO
    ========================================================= */
 const PromoVideo: React.FC = () => {
   return (
-    <section className="py-12 bg-[#07090d]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full rounded-2xl border-4 border-[#1f2740] shadow-2xl"
-        >
-          <source src={isteVideo} type="video/mp4" />
-        </video>
-      </div>
+    <section className="w-full">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-auto object-cover"
+      >
+        <source src={isteVideo} type="video/mp4" />
+      </video>
     </section>
   );
 };
+/* =========================================================
+   ABOUT — pixel dialogue boxes
+   ========================================================= */
 const About: React.FC = () => {
   const items = [
     { icon: "code", title: "Code Dojo", desc: "From Python fundamentals to systems-level wizardry. Weekly hands-on labs.", color: "#4be1ff" },
