@@ -311,12 +311,12 @@ const PromoVideo: React.FC = () => {
    ========================================================= */
 const About: React.FC = () => {
   const items = [
-    { icon: "code", title: "Code Dojo", desc: "From Python fundamentals to systems-level wizardry. Weekly hands-on labs.", color: "#4be1ff" },
-    { icon: "robot", title: "Robotics Lab", desc: "Build bots, fly drones, and program autonomous machines.", color: "#2ee892" },
-    { icon: "innovation", title: "Innovation Hub", desc: "Hackathons, MVP sprints, and idea-to-product challenges.", color: "#ffcc4b" },
-    { icon: "team", title: "Guild Hall", desc: "A welcoming community where every member finds their party.", color: "#ff5fa2" },
-    { icon: "circuit", title: "Circuit Society", desc: "Embedded systems, IoT, and soldering workshops.", color: "#4be1ff" },
-    { icon: "rocket", title: "Launch Pad", desc: "Career mentorship, internships, and industry meetups.", color: "#ff5fa2" },
+    { icon: "code", title: "Hackathon", desc: "Enter the arena, solve real-world quests, and level up your skills through innovation.", color: "#4be1ff" },
+    { icon: "users", title: "Community Events", desc: "Engage in collaborative activities, team-building sessions, and fun tech gatherings.", color: "#4be1ff"},
+    { icon: "innovation", title: "Workshops", desc: "Gain real-world experience with hands-on workshops in cutting-edge technologies.", color: "#ffcc4b" },
+    { icon: "team", title: "Networking", desc: "Connect with peers, alumni, and industry professionals to build meaningful relationships.", color: "#ff5fa2" },
+    { icon: "circuit", title: "Guidance Session", desc: "Connect with experienced mentors for valuable insights on careers, skills, and opportunities.", color: "#4be1ff" },
+    {icon: "trophy", title: "Competitions", desc: "Challenge yourself through coding contests, quizzes, and technical competitions.", color: "#ffcc4b"}
   ] as const;
 
   return (
