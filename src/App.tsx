@@ -895,19 +895,19 @@ const Footer: React.FC = () => (
       <div>
         <div className="h-pixel text-[10px] text-[#4be1ff] mb-3">GUILDS</div>
         <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#about" className="hover:text-[#2ee892]">Code Dojo</a></li>
-          <li><a href="#about" className="hover:text-[#2ee892]">Robotics Lab</a></li>
-          <li><a href="#about" className="hover:text-[#2ee892]">Innovation Hub</a></li>
-          <li><a href="#about" className="hover:text-[#2ee892]">Circuit Society</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Code Dojo</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Robotics Lab</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Innovation Hub</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Circuit Society</a></li>
         </ul>
       </div>
       <div>
         <div className="h-pixel text-[10px] text-[#ffcc4b] mb-3">LINKS</div>
         <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#events" className="hover:text-[#2ee892]">Events</a></li>
-          <li><a href="#team" className="hover:text-[#2ee892]">Team</a></li>
-          <li><a href="#contact" className="hover:text-[#2ee892]">Contact</a></li>
-          <li><a href="#" className="hover:text-[#2ee892]">GitHub</a></li>
+          <li><a href="#events" className="h-mono hover:text-[#2ee892]">Events</a></li>
+          <li><a href="#team" className="h-mono hover:text-[#2ee892]">Team</a></li>
+          <li><a href="#contact" className="h-mono hover:text-[#2ee892]">Contact</a></li>
+          <li><a href="#" className="h-mono hover:text-[#2ee892]">GitHub</a></li>
         </ul>
       </div>
     </div>
