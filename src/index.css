@@ -209,22 +209,6 @@ html, body {
 .card-tilt:hover { transform: translate(-3px,-3px) rotate(-1deg); }
 
 
-/* Normal cursor */
-* {
-  cursor: url("/cursor.png") 0 0, auto;
-}
-
-/* Clickable elements */
-a,
-button,
-input,
-textarea,
-select,
-label,
-[role="button"] {
-  cursor: url("/cursor_pointer.jpg") 0 0, pointer;
-}
-
 /* =========================================================
    FOOTER GLITCH LOGO
    ========================================================= */
