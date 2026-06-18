@@ -152,130 +152,138 @@ const Nav: React.FC = () => {
    HERO
    ========================================================= */
 const Hero: React.FC = () => {
-return ( <section id="top" className="relative min-h-[100svh] overflow-hidden pt-24 pb-12">
-{/* Sky gradient */}
-<div
-className="absolute inset-0"
-style={{
-background:
-"linear-gradient(180deg, #63c7ff 0%, #89d8ff 35%, #b6ebff 70%, #d9f7ff 100%)",
-}}
-/>
+  return (
+    <section
+      id="top"
+      className="relative min-h-[100svh] overflow-hidden pt-24 pb-12"
+    >
+      {/* Sky */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, #63c7ff 0%, #89d8ff 35%, #b6ebff 70%, #d9f7ff 100%)",
+        }}
+      />
 
-```
-  {/* Sun */}
-  <div className="absolute top-28 right-[8%] sm:right-[12%] z-10 animate-float">
-    <PixelSun size={5} />
-  </div>
-
-  {/* Clouds */}
-  <div className="absolute top-32 left-[5%] z-10 animate-drift opacity-90">
-    <PixelCloud size={4} />
-  </div>
-  <div
-    className="absolute top-44 left-[40%] z-10 animate-drift opacity-70"
-    style={{ animationDelay: "1.5s" }}
-  >
-    <PixelCloud size={3} />
-  </div>
-  <div
-    className="absolute top-24 left-[70%] z-10 animate-drift opacity-80"
-    style={{ animationDelay: "3s" }}
-  >
-    <PixelCloud size={3} />
-  </div>
-
-  {/* Trees */}
-  <div className="absolute bottom-[18%] left-[6%] z-10 opacity-80">
-    <PixelTree size={4} />
-  </div>
-  <div className="absolute bottom-[18%] right-[8%] z-10 opacity-80">
-    <PixelTree size={5} />
-  </div>
-  <div className="absolute bottom-[18%] left-[28%] z-10 opacity-60">
-    <PixelTree size={3} />
-  </div>
-
-  {/* Landscape */}
-  <PixelLandscape className="absolute bottom-0 inset-x-0 h-[40%] z-0" />
-
-  {/* Walking character */}
-  <div
-    className="absolute bottom-[14%] left-[10%] z-20 animate-drift"
-    style={{ animationDuration: "12s" }}
-  >
-    <PixelHero size={5} walking />
-  </div>
-
-  {/* Content */}
-  <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
-    <div className="max-w-3xl">
-      <div className="inline-flex items-center gap-2 mb-6 px-3 py-2 border-4 border-[#2ee892] bg-[#0d1118]/80">
-        <span className="w-2 h-2 bg-[#2ee892] animate-blink" />
-        <span className="h-pixel text-[9px] text-[#2ee892]">
-          CHAPTER_01 :: START_YOUR_JOURNEY
-        </span>
+      {/* Sun */}
+      <div className="absolute top-28 right-[8%] sm:right-[12%] z-10 animate-float">
+        <PixelSun size={5} />
       </div>
 
-      <h1 className="h-pixel text-2xl sm:text-4xl md:text-5xl leading-[1.5] text-white mb-4">
-        <span className="text-[#2ee892]">Build.</span>{" "}
-        <span className="text-white">Learn.</span>
-        <br />
-        <span className="text-[#4be1ff]">Innovate.</span>
-      </h1>
-
-      <p className="h-mono text-xl sm:text-2xl text-[#0d1118] max-w-2xl mb-8">
-        Welcome to ISTE — a community where creativity, technology,
-        collaboration, and innovation come together to help students level
-        up their skills and build the future.
-      </p>
-
-      <div className="flex flex-wrap gap-4">
-        <a href="#contact" className="pixel-btn">
-          ▶ Join ISTE
-        </a>
-
-        <a href="#events" className="pixel-btn pixel-btn--cyan">
-          Explore Events
-        </a>
+      {/* Clouds */}
+      <div className="absolute top-32 left-[5%] z-10 animate-drift opacity-90">
+        <PixelCloud size={4} />
       </div>
 
-      {/* HUD stats */}
-      <div className="mt-10 grid grid-cols-3 gap-3 max-w-xl">
-        {[
-          { label: "MEMBERS", value: "240+", color: "#2ee892" },
-          { label: "EVENTS", value: "36", color: "#4be1ff" },
-          { label: "ACHIEVEMENTS", value: "128", color: "#ffcc4b" },
-        ].map((s) => (
-          <div key={s.label} className="pixel-card p-3 sm:p-4">
-            <div className="h-pixel text-[8px] sm:text-[9px] text-white/60 mb-1">
-              {s.label}
-            </div>
-            <div
-              className="h-pixel text-base sm:text-xl"
-              style={{ color: s.color }}
-            >
-              {s.value}
-            </div>
+      <div
+        className="absolute top-44 left-[40%] z-10 animate-drift opacity-70"
+        style={{ animationDelay: "1.5s" }}
+      >
+        <PixelCloud size={3} />
+      </div>
+
+      <div
+        className="absolute top-24 left-[70%] z-10 animate-drift opacity-80"
+        style={{ animationDelay: "3s" }}
+      >
+        <PixelCloud size={3} />
+      </div>
+
+      {/* Trees */}
+      <div className="absolute bottom-[18%] left-[6%] z-10 opacity-80">
+        <PixelTree size={4} />
+      </div>
+
+      <div className="absolute bottom-[18%] right-[8%] z-10 opacity-80">
+        <PixelTree size={5} />
+      </div>
+
+      <div className="absolute bottom-[18%] left-[28%] z-10 opacity-60">
+        <PixelTree size={3} />
+      </div>
+
+      {/* Landscape */}
+      <PixelLandscape className="absolute bottom-0 inset-x-0 h-[40%] z-0" />
+
+      {/* Character */}
+      <div
+        className="absolute bottom-[14%] left-[10%] z-20 animate-drift"
+        style={{ animationDuration: "12s" }}
+      >
+        <PixelHero size={5} walking />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 mb-6 px-3 py-2 border-4 border-[#2ee892] bg-[#0d1118]/80">
+            <span className="w-2 h-2 bg-[#2ee892] animate-blink" />
+            <span className="h-pixel text-[9px] text-[#2ee892]">
+              CHAPTER_01 :: START_YOUR_JOURNEY
+            </span>
           </div>
-        ))}
+
+          <h1 className="h-pixel text-2xl sm:text-4xl md:text-5xl leading-[1.5] text-white mb-4">
+            <span className="text-[#2ee892]">Build.</span>{" "}
+            <span className="text-white">Learn.</span>
+            <br />
+            <span className="text-[#4be1ff]">Innovate.</span>
+          </h1>
+
+          <p className="h-mono text-xl sm:text-2xl text-[#0d1118] max-w-2xl mb-8">
+            Welcome to ISTE — a community where creativity, technology,
+            collaboration, and innovation come together to help students
+            level up their skills and build the future.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <a href="#contact" className="pixel-btn">
+              ▶ Join ISTE
+            </a>
+
+            <a href="#events" className="pixel-btn pixel-btn--cyan">
+              Explore Events
+            </a>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-10 grid grid-cols-3 gap-3 max-w-xl">
+            {[
+              { label: "MEMBERS", value: "240+", color: "#2ee892" },
+              { label: "EVENTS", value: "36", color: "#4be1ff" },
+              { label: "ACHIEVEMENTS", value: "128", color: "#ffcc4b" },
+            ].map((s) => (
+              <div key={s.label} className="pixel-card p-3 sm:p-4">
+                <div className="h-pixel text-[8px] sm:text-[9px] text-white/60 mb-1">
+                  {s.label}
+                </div>
+
+                <div
+                  className="h-pixel text-base sm:text-xl"
+                  style={{ color: s.color }}
+                >
+                  {s.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  {/* Scroll cue */}
-  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2">
-    <span className="h-pixel text-[8px] text-[#0d1118]">SCROLL</span>
-    <div className="w-4 h-6 border-2 border-[#0d1118] relative">
-      <span className="absolute top-1 left-1 w-1.5 h-1.5 bg-[#2ee892] animate-blink" />
-    </div>
-  </div>
-</section>
-```
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2">
+        <span className="h-pixel text-[8px] text-[#0d1118]">
+          SCROLL
+        </span>
 
-);
+        <div className="w-4 h-6 border-2 border-[#0d1118] relative">
+          <span className="absolute top-1 left-1 w-1.5 h-1.5 bg-[#2ee892] animate-blink" />
+        </div>
+      </div>
+    </section>
+  );
 };
-
 
 /* =========================================================
    ABOUT — pixel dialogue boxes
