@@ -746,10 +746,10 @@ const Contact: React.FC = () => {
   const [sent, setSent] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    const t = setTimeout(() => inputRef.current?.focus(), 600);
-    return () => clearTimeout(t);
-  }, []);
+  // useEffect(() => {
+  //   const t = setTimeout(() => inputRef.current?.focus(), 600);
+  //   return () => clearTimeout(t);
+  // }, []);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
