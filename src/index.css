@@ -222,7 +222,7 @@ textarea,
 select,
 label,
 [role="button"] {
-  cursor: url("/cursor_pointer.png") 0 0, pointer;
+  cursor: url("/cursor_pointer.jpg") 0 0, pointer;
 }
 
 /* =========================================================
