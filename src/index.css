@@ -207,3 +207,55 @@ html, body {
 /* Card hover pixel tilt */
 .card-tilt { transition: transform 200ms ease, box-shadow 200ms ease; }
 .card-tilt:hover { transform: translate(-3px,-3px) rotate(-1deg); }
+
+
+.glitch-wrapper {
+  position: relative;
+}
+
+.glitch-red {
+  animation: glitchRed 2s infinite;
+  mix-blend-mode: screen;
+}
+
+.glitch-blue {
+  animation: glitchBlue 2s infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes glitchRed {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    transform: translate(2px, -1px);
+  }
+  60% {
+    transform: translate(-1px, 2px);
+  }
+  80% {
+    transform: translate(1px, -2px);
+  }
+}
+
+@keyframes glitchBlue {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -1px);
+  }
+  40% {
+    transform: translate(-2px, 1px);
+  }
+  60% {
+    transform: translate(1px, -2px);
+  }
+  80% {
+    transform: translate(-1px, 2px);
+  }
+}
