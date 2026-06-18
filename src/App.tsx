@@ -498,9 +498,9 @@ const Events: React.FC = () => {
                   <span className="flex items-center gap-2 h-pixel text-[9px] text-[#ffcc4b]">
                     <PixelCoin size={3} /> {e.reward}
                   </span>
-                  <button className="h-pixel text-[9px] text-[#2ee892] hover:text-white transition-colors">
+                  {/* <button className="h-pixel text-[9px] text-[#2ee892] hover:text-white transition-colors">
                     ENROLL ▸
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </article>
