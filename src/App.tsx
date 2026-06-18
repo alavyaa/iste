@@ -57,11 +57,13 @@ const Particles: React.FC = () => {
 const Nav: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   const links = [
     ["#about", "About"],
     ["#events", "Events"],
@@ -70,27 +72,36 @@ const Nav: React.FC = () => {
     ["#gallery", "Gallery"],
     ["#contact", "Contact"],
   ];
+
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        scrolled ? "bg-[#07090d]/90 backdrop-blur border-b-4 border-[#0a0d14]" : "bg-transparent"
+        scrolled
+          ? "bg-[#07090d]/90 backdrop-blur border-b-4 border-[#0a0d14]"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        
+        {/* Logo */}
         <a href="#top" className="flex items-center gap-3 group">
-         <img
-  src={isteLogo}
-  alt="ISTE Logo"
-  className="w-10 h-10 pixelated object-contain"
-/>
-             
-          </div>
+          <img
+            src={isteLogo}
+            alt="ISTE Logo"
+            className="w-10 h-10 object-contain pixelated"
+          />
+
           <div className="leading-none">
-            <div className="h-pixel text-[11px] text-[#2ee892]">ISTE</div>
-            <div className="h-mono text-[#4be1ff] text-sm">build · learn · innovate</div>
+            <div className="h-pixel text-[11px] text-[#2ee892]">
+              ISTE
+            </div>
+            <div className="h-mono text-[#4be1ff] text-sm">
+              build · learn · innovate
+            </div>
           </div>
         </a>
 
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {links.map(([href, label]) => (
             <a
@@ -101,9 +112,12 @@ const Nav: React.FC = () => {
               {label}
             </a>
           ))}
-          <a href="#contact" className="pixel-btn ml-3">Join ISTE</a>
+          <a href="#contact" className="pixel-btn ml-3">
+            Join ISTE
+          </a>
         </nav>
 
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen((v) => !v)}
           className="md:hidden h-pixel text-[10px] px-3 py-2 border-4 border-[#2ee892] text-[#2ee892]"
@@ -112,6 +126,8 @@ const Nav: React.FC = () => {
           {open ? "CLOSE" : "MENU"}
         </button>
       </div>
+
+      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-[#0d1118] border-t-4 border-[#0a0d14]">
           <div className="px-4 py-4 flex flex-col gap-2">
