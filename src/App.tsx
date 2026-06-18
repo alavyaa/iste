@@ -231,7 +231,7 @@ const Hero: React.FC = () => {
             <span className="text-[#4be1ff]">Innovate.</span>
           </h1>
 
-          <p className="h-mono text-xl sm:text-2xl text-white max-w-2xl mb-8"
+          <p className="h-mono text-xl sm:text-2xl text-white max-w-2xl mb-8">
             Welcome to ISTE — a community where creativity, technology,
             collaboration, and innovation come together to help students
             level up their skills and build the future.
