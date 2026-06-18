@@ -16,6 +16,34 @@ import {
   CircuitPattern,
 } from "./components/Pixel";
 import isteLogo from "./assets/iste.png";
+import isteVideo from "./assets/iste.mp4";
+import footerLogo from "./assets/iste_footer.png";
+
+/* =========================================================
+    Cursor
+   ========================================================= */
+const PixelCursor = () => {
+  const [pos, setPos] = React.useState({ x: 0, y: 0 });
+
+  React.useEffect(() => {
+    const move = (e: MouseEvent) =>
+      setPos({ x: e.clientX, y: e.clientY });
+
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
+  return (
+    <div
+      style={{
+        left: pos.x,
+        top: pos.y,
+      }}
+      className="fixed w-4 h-4 bg-[#2ee892] pointer-events-none z-[9999]"
+    />
+  );
+};
+
 /* =========================================================
    PARTICLES — floating dots/stars/coins
    ========================================================= */
@@ -286,16 +314,34 @@ const Hero: React.FC = () => {
 };
 
 /* =========================================================
+   ISTE VIDEO
+   ========================================================= */
+const PromoVideo: React.FC = () => {
+  return (
+    <section className="w-full">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-auto object-cover"
+      >
+        <source src={isteVideo} type="video/mp4" />
+      </video>
+    </section>
+  );
+};
+/* =========================================================
    ABOUT — pixel dialogue boxes
    ========================================================= */
 const About: React.FC = () => {
   const items = [
-    { icon: "code", title: "Code Dojo", desc: "From Python fundamentals to systems-level wizardry. Weekly hands-on labs.", color: "#4be1ff" },
-    { icon: "robot", title: "Robotics Lab", desc: "Build bots, fly drones, and program autonomous machines.", color: "#2ee892" },
-    { icon: "innovation", title: "Innovation Hub", desc: "Hackathons, MVP sprints, and idea-to-product challenges.", color: "#ffcc4b" },
-    { icon: "team", title: "Guild Hall", desc: "A welcoming community where every member finds their party.", color: "#ff5fa2" },
-    { icon: "circuit", title: "Circuit Society", desc: "Embedded systems, IoT, and soldering workshops.", color: "#4be1ff" },
-    { icon: "rocket", title: "Launch Pad", desc: "Career mentorship, internships, and industry meetups.", color: "#ff5fa2" },
+    { icon: "code", title: "Hackathon", desc: "Enter the arena, solve real-world quests, and level up your skills through innovation.", color: "#4be1ff" },
+    { icon: "users", title: "Community Events", desc: "Engage in collaborative activities, team-building sessions, and fun tech gatherings.", color: "#4be1ff"},
+    { icon: "innovation", title: "Workshops", desc: "Gain real-world experience with hands-on workshops in cutting-edge technologies.", color: "#ffcc4b" },
+    { icon: "team", title: "Networking", desc: "Connect with peers, alumni, and industry professionals to build meaningful relationships.", color: "#ff5fa2" },
+    { icon: "circuit", title: "Guidance Session", desc: "Connect with experienced mentors for valuable insights on careers, skills, and opportunities.", color: "#4be1ff" },
+    {icon: "trophy", title: "Competitions", desc: "Challenge yourself through coding contests, quizzes, and technical competitions.", color: "#ffcc4b"}
   ] as const;
 
   return (
@@ -871,24 +917,24 @@ const Footer: React.FC = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
       <div>
         <div className="h-pixel text-[11px] text-[#2ee892] mb-2">ISTE</div>
-        <p className="text-white/60 text-sm">Building innovation block by block — one student, one commit, one quest at a time.</p>
+        <p className="h-mono text-white/60 text-sm">Building innovation block by block — one student, one commit, one quest at a time.</p>
       </div>
       <div>
         <div className="h-pixel text-[10px] text-[#4be1ff] mb-3">GUILDS</div>
         <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#about" className="hover:text-[#2ee892]">Code Dojo</a></li>
-          <li><a href="#about" className="hover:text-[#2ee892]">Robotics Lab</a></li>
-          <li><a href="#about" className="hover:text-[#2ee892]">Innovation Hub</a></li>
-          <li><a href="#about" className="hover:text-[#2ee892]">Circuit Society</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Code Dojo</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Robotics Lab</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Innovation Hub</a></li>
+          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Circuit Society</a></li>
         </ul>
       </div>
       <div>
         <div className="h-pixel text-[10px] text-[#ffcc4b] mb-3">LINKS</div>
         <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#events" className="hover:text-[#2ee892]">Events</a></li>
-          <li><a href="#team" className="hover:text-[#2ee892]">Team</a></li>
-          <li><a href="#contact" className="hover:text-[#2ee892]">Contact</a></li>
-          <li><a href="#" className="hover:text-[#2ee892]">GitHub</a></li>
+          <li><a href="#events" className="h-mono hover:text-[#2ee892]">Events</a></li>
+          <li><a href="#team" className="h-mono hover:text-[#2ee892]">Team</a></li>
+          <li><a href="#contact" className="h-mono hover:text-[#2ee892]">Contact</a></li>
+          <li><a href="#" className="h-mono hover:text-[#2ee892]">GitHub</a></li>
         </ul>
       </div>
     </div>
@@ -896,6 +942,31 @@ const Footer: React.FC = () => (
       <span className="h-mono text-white/50 text-sm">© 2026 ISTE Society. All XP reserved.</span>
       <span className="h-pixel text-[8px] text-white/40">PRESS [START] TO CONTINUE</span>
     </div>
+
+   <div className="mt-8 flex justify-center">
+  <div className="relative w-full max-w-7xl py-6 overflow-hidden">
+    <img
+      src={footerLogo}
+      alt="ISTE"
+      className="relative z-10 w-[95%] max-w-[1500px] mx-auto footer-main"
+    />
+
+    <img
+      src={footerLogo}
+      alt=""
+      aria-hidden="true"
+      className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-red"
+    />
+
+    <img
+      src={footerLogo}
+      alt=""
+      aria-hidden="true"
+      className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-blue"
+    />
+  </div>
+</div>
+ 
   </footer>
 );
 
@@ -944,7 +1015,9 @@ const App: React.FC = () => {
       <Particles />
       <Nav />
       <main className="relative z-10">
+        <PixelCursor />
         <Hero />
+        <PromoVideo />
         <About />
         <Events />
         <Team />

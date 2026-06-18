@@ -294,7 +294,7 @@ export const PixelHeart: React.FC<PixelProps> = ({ size = 4, className = "" }) =
 
 /** Pixel icons for About section — chunky 12x12 icons */
 export const PixelIcon: React.FC<{
-  type: "code" | "robot" | "innovation" | "team" | "circuit" | "rocket";
+  type: "code" | "robot" | "innovation" | "team" | "circuit" | "rocket" | "users" | "trophy" ;
   size?: number;
   className?: string;
 }> = ({ type, size = 5, className = "" }) => {
@@ -305,6 +305,8 @@ export const PixelIcon: React.FC<{
     team: ["#0a0d14", "#ff5fa2", "#ffb3d4"],
     circuit: ["#0a0d14", "#4be1ff", "#2ee892"],
     rocket: ["#0a0d14", "#ff5fa2", "#ffcc4b"],
+   users: ["#0a0d14", "#2ee892", "#6cffb0"],
+   trophy: ["#0a0d14", "#ffcc4b", "#ffe28a"],
   };
   const [bg, mid, hi] = palettes[type];
   const grids: Record<string, string[]> = {
@@ -374,6 +376,29 @@ export const PixelIcon: React.FC<{
       "011100110000",
       "010000010000",
     ],
+     users: [
+  "0011001100",
+  "0122112210",
+  "0122112210",
+  "0011221100",
+  "0001110000",
+  "0012221000",
+  "0122222100",
+  "0011111000",
+  "0000000000",
+],
+
+trophy: [
+  "0001111000",
+  "0012222100",
+  "0122222210",
+  "0012222100",
+  "0001111000",
+  "0000110000",
+  "0001111000",
+  "0010000100",
+  "0001111000",
+],
   };
   const grid = grids[type];
   return (
