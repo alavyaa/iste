@@ -16,6 +16,7 @@ import {
   CircuitPattern,
 } from "./components/Pixel";
 import isteLogo from "./assets/iste.png";
+import isteVideo from "./assets/iste.mp4";
 /* =========================================================
    PARTICLES — floating dots/stars/coins
    ========================================================= */
@@ -288,6 +289,22 @@ const Hero: React.FC = () => {
 /* =========================================================
    ABOUT — pixel dialogue boxes
    ========================================================= */
+const PromoVideo: React.FC = () => {
+  return (
+    <section className="py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        <video
+          className="w-full rounded-xl border-4 border-[#1f2740]"
+          controls
+          muted
+          playsInline
+        >
+          <source src={isteVideo} type="video/mp4" />
+        </video>
+      </div>
+    </section>
+  );
+};
 const About: React.FC = () => {
   const items = [
     { icon: "code", title: "Code Dojo", desc: "From Python fundamentals to systems-level wizardry. Weekly hands-on labs.", color: "#4be1ff" },
@@ -945,6 +962,7 @@ const App: React.FC = () => {
       <Nav />
       <main className="relative z-10">
         <Hero />
+        <PromoVideo />
         <About />
         <Events />
         <Team />
