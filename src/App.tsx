@@ -291,13 +291,14 @@ const Hero: React.FC = () => {
    ========================================================= */
 const PromoVideo: React.FC = () => {
   return (
-    <section className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-12 bg-[#07090d]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <video
-          className="w-full rounded-xl border-4 border-[#1f2740]"
-          controls
+          autoPlay
           muted
+          loop
           playsInline
+          className="w-full rounded-2xl border-4 border-[#1f2740] shadow-2xl"
         >
           <source src={isteVideo} type="video/mp4" />
         </video>
