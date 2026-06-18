@@ -892,7 +892,7 @@ const Footer: React.FC = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
       <div>
         <div className="h-pixel text-[11px] text-[#2ee892] mb-2">ISTE</div>
-        <p className="text-white/60 text-sm">Building innovation block by block — one student, one commit, one quest at a time.</p>
+        <p className="h-mono text-white/60 text-sm">Building innovation block by block — one student, one commit, one quest at a time.</p>
       </div>
       <div>
         <div className="h-pixel text-[10px] text-[#4be1ff] mb-3">GUILDS</div>
