@@ -211,7 +211,7 @@ html, body {
 
 /* Normal cursor */
 * {
-  cursor: url("/cursor.jpg") 0 0, auto;
+  cursor: url("/cursor.png") 0 0, auto;
 }
 
 /* Clickable elements */
