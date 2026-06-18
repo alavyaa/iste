@@ -17,6 +17,8 @@ import {
 } from "./components/Pixel";
 import isteLogo from "./assets/iste.png";
 import isteVideo from "./assets/iste.mp4";
+import footerLogo from "./assets/iste_footer.png";
+
 /* =========================================================
    PARTICLES — floating dots/stars/coins
    ========================================================= */
@@ -915,6 +917,31 @@ const Footer: React.FC = () => (
       <span className="h-mono text-white/50 text-sm">© 2026 ISTE Society. All XP reserved.</span>
       <span className="h-pixel text-[8px] text-white/40">PRESS [START] TO CONTINUE</span>
     </div>
+
+    <div className="mt-12 flex justify-center">
+  <div className="relative w-[280px] sm:w-[400px] glitch-wrapper">
+    <img
+      src={footerLogo}
+      alt="ISTE"
+      className="w-full relative z-10"
+    />
+
+    <img
+      src={footerLogo}
+      alt=""
+      aria-hidden="true"
+      className="absolute inset-0 w-full opacity-70 glitch-red"
+    />
+
+    <img
+      src={footerLogo}
+      alt=""
+      aria-hidden="true"
+      className="absolute inset-0 w-full opacity-70 glitch-blue"
+    />
+  </div>
+</div>
+ 
   </footer>
 );
 
