@@ -45,3 +45,11 @@ ISTE-Website/
 │ └── script.js
 │
 └── README.md
+
+
+## 🚀 Getting Started
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/iste-website.git
