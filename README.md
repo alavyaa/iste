@@ -53,3 +53,47 @@ ISTE-Website/
 
 ```bash
 git clone https://github.com/your-username/iste-website.git
+```
+
+## 🚀 Run the Project
+
+Simply open `` in your browser.
+
+---
+
+## 🎯 Purpose
+
+This website was developed to strengthen the online presence of the ISTE student chapter by providing students with easy access to information about events, opportunities, workshops, and club activities.
+
+---
+
+## 🌟 Highlights
+
+* Clean and professional design
+* Student-focused experience
+* Easy navigation
+* Scalable architecture for future enhancements
+
+---
+
+## 🔮 Future Improvements
+
+* Event registration system
+* Admin dashboard
+* Photo gallery
+* Newsletter integration
+* Achievement tracking
+* Member portal
+
+---
+
+## 👩‍💻 Developed By
+
+**Alavya Bajpai**
+
+B.Tech (Artificial Intelligence & Data Science)
+CGC Jhanjeri
+
+---
+
+> *"Empowering students through technology, innovation, and continuous learning."*
