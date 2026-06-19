@@ -30,3 +30,18 @@ A modern, interactive, and visually engaging website designed for the ISTE stude
 - Interactive Components
 
 ## 📂 Project Structure
+ISTE-Website/
+│
+├── index.html
+├── assets/
+│ ├── images/
+│ ├── icons/
+│ └── logos/
+│
+├── css/
+│ └── style.css
+│
+├── js/
+│ └── script.js
+│
+└── README.md
