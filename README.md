@@ -57,7 +57,7 @@ git clone https://github.com/your-username/iste-website.git
 
 ## 🚀 Run the Project
 
-Simply open `` in your browser.
+Simply open `iste-omega.vercel.app` in your browser.
 
 ---
 
