@@ -1,9 +1,575 @@
-const TeamPage = () => {
+import { useEffect, useState } from "react";
+import MemberCard from "./components/MemberCard";
+import PixelRevealImage from "./components/PixelRevealImage";
+
+// ─── INTERFACES ─────────────────────────────────────────────
+
+interface LeadershipMember {
+  label: string;
+  name: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+}
+
+interface Department {
+  name: string;
+  tag: string;
+  members: TeamMember[];
+}
+
+// ─── SAMPLE DATA ────────────────────────────────────────────
+
+const leadershipData: LeadershipMember[] = [
+  {
+    label: "GUILD_MASTER",
+    name: "Hritik",
+    title: "President / Guild Master",
+    description:
+      "Final-year CS. Leads the guild with unwavering resolve. Believes semicolons are a personality trait and merge conflicts are character development.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face",
+  },
+  {
+    label: "QUEST_GIVER",
+    name: "Pranjal",
+    title: "Vice President / Quest Giver",
+    description:
+      "Organizes chaos into calendars. Hosts every event. The one who makes sure the guild actually does things instead of just talking about them.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop&crop=face",
+  },
+];
+
+const departmentsData: Department[] = [
+  {
+    name: "Core Team",
+    tag: "CORE_OPS",
+    members: [
+      {
+        name: "Aarav Patel",
+        role: "Core Coordinator",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      },
+      {
+        name: "Sneha Iyer",
+        role: "Core Coordinator",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      },
+    ],
+  },
+  {
+    name: "Technical Team",
+    tag: "TECH_DIVISION",
+    members: [
+      {
+        name: "Rohan Mehta",
+        role: "Bot Tamer / Tech Lead",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      },
+      {
+        name: "Ishita Verma",
+        role: "Dev Ops Ninja",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      },
+    ],
+  },
+  {
+    name: "Design Team",
+    tag: "PIXEL_MAGES",
+    members: [
+      {
+        name: "Sara Khan",
+        role: "Pixel Mage / Designer",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
+      },
+      {
+        name: "Arjun Das",
+        role: "UI Alchemist",
+        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+      },
+    ],
+  },
+  {
+    name: "Content Team",
+    tag: "LORE_KEEPERS",
+    members: [
+      {
+        name: "Diya Sharma",
+        role: "Lore Keeper",
+        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=face",
+      },
+      {
+        name: "Kabir Singh",
+        role: "Scroll Writer",
+        image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
+      },
+    ],
+  },
+  {
+    name: "PR Team",
+    tag: "HERALD_SQUAD",
+    members: [
+      {
+        name: "Meera Nair",
+        role: "Innovation Scout",
+        image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&crop=face",
+      },
+      {
+        name: "Vikram Joshi",
+        role: "Outreach Knight",
+        image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop&crop=face",
+      },
+    ],
+  },
+];
+
+// ─── FLOATING PIXELS COMPONENT ──────────────────────────────
+
+const FloatingPixels: React.FC = () => {
+  const [pixels] = useState(() =>
+    Array.from({ length: 25 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      opacity: Math.random() * 0.3 + 0.05,
+      duration: Math.random() * 20 + 15,
+      delay: Math.random() * 10,
+    }))
+  );
+
   return (
-    <div className="min-h-screen bg-[#060912] text-white flex items-center justify-center">
-      <h1 className="h-pixel text-5xl">
-        GUILD HALL
-      </h1>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {pixels.map((pixel) => (
+        <div
+          key={pixel.id}
+          className="absolute rounded-none bg-[#00ffc8]"
+          style={{
+            left: `${pixel.x}%`,
+            top: `${pixel.y}%`,
+            width: `${pixel.size}px`,
+            height: `${pixel.size}px`,
+            opacity: pixel.opacity,
+            animation: `floatPixel ${pixel.duration}s ease-in-out ${pixel.delay}s infinite alternate`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+// ─── LEADERSHIP SECTION COMPONENT ───────────────────────────
+
+interface LeadershipSectionProps {
+  member: LeadershipMember;
+  index: number;
+}
+
+const LeadershipSection: React.FC<LeadershipSectionProps> = ({
+  member,
+  index,
+}) => {
+  const isReversed = index % 2 !== 0;
+
+  return (
+    <div
+      className={`flex flex-col ${
+        isReversed ? "md:flex-row-reverse" : "md:flex-row"
+      } gap-6 md:gap-10 items-center border border-slate-700/50 bg-[#131c31]/80 p-5 sm:p-6 md:p-8 rounded-sm relative overflow-hidden group transition-all duration-500 hover:border-[#00ffc8]/30`}
+    >
+      {/* Corner brackets */}
+      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#00ffc8]/50" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#00ffc8]/50" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#00ffc8]/50" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#00ffc8]/50" />
+
+      {/* Scanline overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.015]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)",
+        }}
+      />
+
+      {/* Image */}
+      <div className="w-full md:w-2/5 flex-shrink-0">
+        <div className="relative border border-slate-700/60 rounded-sm overflow-hidden bg-[#0a1020]">
+          {/* Image label */}
+          <div className="absolute top-0 left-0 z-20 bg-[#0a1020]/90 border-r border-b border-slate-700/60 px-2 py-1">
+            <span
+              className="text-[8px] text-[#00ffc8] tracking-widest"
+              style={{
+                fontFamily: '"Press Start 2P", "Courier New", monospace',
+              }}
+            >
+              {member.label}
+            </span>
+          </div>
+          <PixelRevealImage
+            src={member.image}
+            alt={member.name}
+            className="w-full aspect-[4/5] sm:aspect-square"
+            pixelSize={16}
+            revealDuration={700}
+          />
+          {/* Bottom decorative bar */}
+          <div className="h-1 bg-gradient-to-r from-[#00ffc8] via-[#00e5ff] to-transparent" />
+        </div>
+      </div>
+
+      {/* Text Content */}
+      <div className="w-full md:w-3/5 flex flex-col justify-center">
+        {/* Tag */}
+        <div className="inline-flex items-center gap-2 mb-3">
+          <div className="w-1.5 h-1.5 bg-[#39ff14] animate-pulse" />
+          <span
+            className="text-[9px] text-[#39ff14] tracking-[0.2em] uppercase"
+            style={{
+              fontFamily: '"Press Start 2P", "Courier New", monospace',
+            }}
+          >
+            {member.label}
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-[#39ff14]/30 to-transparent ml-2" />
+        </div>
+
+        {/* Name */}
+        <h3
+          className="text-white text-lg sm:text-xl md:text-2xl font-bold tracking-wide mb-1"
+          style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
+        >
+          {member.name}
+        </h3>
+
+        {/* Title */}
+        <p
+          className="text-[#00ffc8] text-[10px] sm:text-xs tracking-widest uppercase mb-4"
+          style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
+        >
+          {member.title}
+        </p>
+
+        {/* Divider */}
+        <div className="flex gap-1 mb-4">
+          {Array.from({ length: 40 }).map((_, i) => (
+            <div
+              key={i}
+              className="w-1 h-px"
+              style={{
+                backgroundColor:
+                  i % 2 === 0
+                    ? "rgba(0, 255, 200, 0.3)"
+                    : "transparent",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Description */}
+        <p
+          className="text-slate-400 text-xs sm:text-sm leading-relaxed tracking-wide"
+          style={{ fontFamily: '"Courier New", monospace' }}
+        >
+          {member.description}
+        </p>
+
+        {/* Status bar */}
+        <div className="mt-5 flex items-center gap-3">
+          <span className="flex items-center gap-1.5">
+            <span className="text-pink-500 text-sm">♥</span>
+            <span
+              className="text-pink-400 text-[9px] tracking-widest uppercase"
+              style={{
+                fontFamily: '"Press Start 2P", "Courier New", monospace',
+              }}
+            >
+              online
+            </span>
+          </span>
+          <div className="h-3 w-px bg-slate-700" />
+          <span
+            className="text-slate-500 text-[8px] tracking-widest uppercase"
+            style={{
+              fontFamily: '"Press Start 2P", "Courier New", monospace',
+            }}
+          >
+            class: {member.label.toLowerCase()}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── DEPARTMENT SECTION ─────────────────────────────────────
+
+interface DepartmentSectionProps {
+  department: Department;
+  index: number;
+}
+
+const DepartmentSection: React.FC<DepartmentSectionProps> = ({
+  department,
+  index,
+}) => {
+  return (
+    <div className="relative">
+      {/* Section Header */}
+      <div className="flex items-center gap-4 mb-6 sm:mb-8">
+        {/* Index tag */}
+        <div className="border border-[#00ffc8]/40 px-3 py-1.5 bg-[#0a1020] rounded-sm flex-shrink-0">
+          <span
+            className="text-[#00ffc8] text-[9px] sm:text-[10px] tracking-widest"
+            style={{
+              fontFamily: '"Press Start 2P", "Courier New", monospace',
+            }}
+          >
+            {String(index + 1).padStart(2, "0")}_{department.tag}
+          </span>
+        </div>
+
+        {/* Line */}
+        <div className="h-px flex-1 bg-gradient-to-r from-[#00ffc8]/30 via-slate-700/50 to-transparent" />
+      </div>
+
+      {/* Department Name */}
+      <h3
+        className="text-white text-base sm:text-lg md:text-xl tracking-wide mb-6 sm:mb-8"
+        style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
+      >
+        {department.name}
+      </h3>
+
+      {/* Members Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+        {department.members.map((member, memberIndex) => (
+          <MemberCard
+            key={memberIndex}
+            name={member.name}
+            role={member.role}
+            image={member.image}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ─── MAIN TEAM PAGE ─────────────────────────────────────────
+
+const TeamPage: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
+    // Trigger entrance animation
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#0b1121] text-white relative overflow-hidden">
+      {/* Inject keyframes */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        @keyframes floatPixel {
+          0% { transform: translateY(0) translateX(0); }
+          25% { transform: translateY(-20px) translateX(10px); }
+          50% { transform: translateY(-10px) translateX(-5px); }
+          75% { transform: translateY(-30px) translateX(15px); }
+          100% { transform: translateY(-5px) translateX(-10px); }
+        }
+
+        @keyframes glitchLine {
+          0%, 100% { transform: translateX(0); }
+          10% { transform: translateX(-2px); }
+          20% { transform: translateX(2px); }
+          30% { transform: translateX(0); }
+        }
+
+        @keyframes fadeSlideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+
+        @keyframes scanline {
+          0% { top: -10%; }
+          100% { top: 110%; }
+        }
+      `}</style>
+
+      {/* Floating pixels background */}
+      <FloatingPixels />
+
+      {/* Scanline effect overlay */}
+      <div
+        className="fixed inset-0 pointer-events-none z-[1] opacity-[0.02]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0.05) 4px)",
+        }}
+      />
+
+      {/* Main content */}
+      <div
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transition: "opacity 0.6s ease",
+        }}
+      >
+        {/* ─── PAGE HEADER ───────────────────────────────── */}
+        <div className="text-center mb-16 sm:mb-20 md:mb-24">
+          {/* Quest tag */}
+          <div className="inline-flex items-center justify-center mb-6">
+            <div className="border border-[#00ffc8]/60 px-4 py-2 bg-[#0a1020]/80 rounded-sm">
+              <span
+                className="text-[#00ffc8] text-[10px] sm:text-xs tracking-[0.25em]"
+                style={{
+                  fontFamily: '"Press Start 2P", "Courier New", monospace',
+                }}
+              >
+                🏆 QUEST_04
+              </span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 tracking-wide"
+            style={{
+              fontFamily: '"Press Start 2P", "Courier New", monospace',
+              animation: "fadeSlideUp 0.8s ease forwards",
+            }}
+          >
+            Meet the Guild
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className="text-slate-400 text-xs sm:text-sm tracking-wider max-w-xl mx-auto"
+            style={{
+              fontFamily: '"Courier New", monospace',
+              animation: "fadeSlideUp 0.8s ease 0.2s forwards",
+            }}
+          >
+            The players behind every quest, event, and innovation.
+            <br />
+            Each with their own class.
+          </p>
+
+          {/* Decorative divider */}
+          <div className="flex items-center justify-center gap-1.5 mt-6">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="w-1.5 h-1.5 rounded-none"
+                style={{
+                  backgroundColor:
+                    i === 2 ? "#00ffc8" : "rgba(0, 255, 200, 0.2)",
+                  animation:
+                    i === 2 ? "blink 1.5s step-end infinite" : "none",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ─── LEADERSHIP SECTION ────────────────────────── */}
+        <div className="mb-16 sm:mb-20 md:mb-24">
+          {/* Section Tag */}
+          <div className="flex items-center gap-4 mb-8 sm:mb-10">
+            <div className="border border-[#00e5ff]/40 px-3 py-1.5 bg-[#0a1020] rounded-sm">
+              <span
+                className="text-[#00e5ff] text-[9px] sm:text-[10px] tracking-widest"
+                style={{
+                  fontFamily: '"Press Start 2P", "Courier New", monospace',
+                }}
+              >
+                LEADERSHIP
+              </span>
+            </div>
+            <div className="h-px flex-1 bg-gradient-to-r from-[#00e5ff]/30 via-slate-700/50 to-transparent" />
+          </div>
+
+          <div className="space-y-6 sm:space-y-8">
+            {leadershipData.map((member, index) => (
+              <LeadershipSection key={index} member={member} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* ─── TEAM DEPARTMENTS ──────────────────────────── */}
+        <div className="space-y-14 sm:space-y-16 md:space-y-20">
+          {departmentsData.map((department, index) => (
+            <DepartmentSection
+              key={index}
+              department={department}
+              index={index}
+            />
+          ))}
+        </div>
+
+        {/* ─── FOOTER DECORATION ─────────────────────────── */}
+        <div className="mt-16 sm:mt-20 md:mt-24 text-center">
+          <div className="flex items-center justify-center gap-1.5 mb-4">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <div
+                key={i}
+                className="w-1 h-px"
+                style={{
+                  backgroundColor:
+                    i % 3 === 0
+                      ? "rgba(0, 255, 200, 0.3)"
+                      : "rgba(100, 116, 139, 0.15)",
+                }}
+              />
+            ))}
+          </div>
+          <p
+            className="text-slate-600 text-[8px] sm:text-[9px] tracking-[0.3em] uppercase"
+            style={{
+              fontFamily: '"Press Start 2P", "Courier New", monospace',
+            }}
+          >
+            end_of_roster
+            <span style={{ animation: "blink 1s step-end infinite" }}>_</span>
+          </p>
+          <div className="flex items-center justify-center gap-1.5 mt-4">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <div
+                key={i}
+                className="w-1 h-px"
+                style={{
+                  backgroundColor:
+                    i % 3 === 0
+                      ? "rgba(0, 255, 200, 0.3)"
+                      : "rgba(100, 116, 139, 0.15)",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
