@@ -18,6 +18,7 @@ import {
 import isteLogo from "./assets/iste.png";
 import isteVideo from "./assets/iste.mp4";
 import footerLogo from "./assets/iste_footer.png";
+import { Link } from "react-router-dom";
 
 /* =========================================================
    PARTICLES — floating dots/stars/coins
@@ -514,82 +515,9 @@ const Events: React.FC = () => {
 /* =========================================================
    TEAM — stats-style character cards
    ========================================================= */
-const Team: React.FC = () => {
-  const team = [
-    { name: "Hritik", role: "Guild Master / President", skin: "#f1c79b", hair: "#1a1a1a", shirt: "#2ee892", pants: "#14a35d", stats: { code: 92, lead: 88, coffee: 99 }, bio: "Final-year CS. Believes semicolons are a personality." },
-    { name: "Pranjal", role: "Quest Giver / VP", skin: "#e8b894", hair: "#5a2a1a", shirt: "#ff5fa2", pants: "#a8327d", stats: { code: 85, lead: 95, coffee: 70 }, bio: "Organizes chaos into calendars. Hosts every event." },
-    { name: "Rohan Mehta", role: "Bot Tamer / Tech Lead", skin: "#d9a578", hair: "#2a1a0a", shirt: "#4be1ff", pants: "#1aa3d6", stats: { code: 90, lead: 75, coffee: 80 }, bio: "Speaks fluent Arduino. Once built a roomba that judges you." },
-    { name: "Sara Khan", role: "Pixel Mage / Designer", skin: "#f1c79b", hair: "#0a0d14", shirt: "#ffcc4b", pants: "#a8761b", stats: { code: 78, lead: 82, coffee: 65 }, bio: "Crafts the brand. Will fight you over kerning." },
-    { name: "Kabir Singh", role: "Circuit Sage / Treasurer", skin: "#c89070", hair: "#3a2a1a", shirt: "#2ee892", pants: "#0a0d14", stats: { code: 80, lead: 70, coffee: 88 }, bio: "Manages the treasury. Soldering iron is his wand." },
-    { name: "Meera Nair", role: "Innovation Scout", skin: "#e8b894", hair: "#1a1a1a", shirt: "#ff5fa2", pants: "#1aa3d6", stats: { code: 88, lead: 86, coffee: 75 }, bio: "Finds internships, hackathons, and free pizza." },
-  ];
-
-  return (
-    <section id="team" className="relative py-20 sm:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <SectionHeader kicker="QUEST_04" title="Meet the Guild" subtitle="Six playable characters. Each with their own class." />
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-12">
-          {team.map((m, i) => (
-            <div
-              key={m.name}
-              className="pixel-card p-5 card-tilt reveal"
-              style={{ transitionDelay: `${i * 70}ms` }}
-            >
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 p-2 bg-[#0d1118] border-4 border-[#0a0d14]">
-                  <PixelAvatar
-                    size={4}
-                    skin={m.skin}
-                    hair={m.hair}
-                    shirt={m.shirt}
-                    pants={m.pants}
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="h-pixel text-[9px] text-[#2ee892] mb-1">LV.{10 + i * 3}</div>
-                  <h3 className="h-pixel text-xs text-white leading-snug">{m.name}</h3>
-                  <p className="h-mono text-[#4be1ff] text-base mt-1">{m.role}</p>
-                </div>
-              </div>
-
-              <p className="text-white/70 text-sm mt-4 leading-relaxed">{m.bio}</p>
-
-              <div className="mt-4 space-y-2">
-                {Object.entries(m.stats).map(([k, v]) => (
-                  <div key={k} className="flex items-center gap-3">
-                    <span className="h-pixel text-[8px] text-white/60 w-14 uppercase">{k}</span>
-                    <div className="flex-1 h-3 bg-[#0a0d14] border-2 border-[#0a0d14] relative overflow-hidden">
-                      <div
-                        className="h-full"
-                        style={{
-                          width: `${v}%`,
-                          background: `repeating-linear-gradient(90deg, ${
-                            k === "code" ? "#4be1ff" : k === "lead" ? "#ff5fa2" : "#ffcc4b"
-                          } 0 4px, ${
-                            k === "code" ? "#1aa3d6" : k === "lead" ? "#a8327d" : "#a8761b"
-                          } 4px 8px)`,
-                        }}
-                      />
-                    </div>
-                    <span className="h-pixel text-[8px] text-white/70 w-8 text-right">{v}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 pt-3 border-t-2 border-dashed border-[#1f2740] flex items-center justify-between">
-                <span className="flex items-center gap-1 text-[#ff5fa2]">
-                  <PixelHeart size={2} /> ONLINE
-                </span>
-                <span className="h-pixel text-[8px] text-white/40">CLASS: {m.role.split(" ")[0].toUpperCase()}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+<Link to="/team">
+  Team
+</Link>
 
 /* =========================================================
    ACHIEVEMENTS
