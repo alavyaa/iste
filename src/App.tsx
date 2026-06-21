@@ -71,7 +71,7 @@ const Nav: React.FC = () => {
   const links = [
     ["#about", "About"],
     ["#events", "Events"],
-    ["#team", "Team"],
+    ["/team", "Team"],
     ["#achievements", "Achievements"],
     ["#gallery", "Gallery"],
     ["#contact", "Contact"],
@@ -79,14 +79,13 @@ const Nav: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        scrolled
+      className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled
           ? "bg-[#07090d]/90 backdrop-blur border-b-4 border-[#0a0d14]"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-        
+
         {/* Logo */}
         <a href="#top" className="flex items-center gap-3 group">
           <img
@@ -135,16 +134,25 @@ const Nav: React.FC = () => {
       {open && (
         <div className="md:hidden bg-[#0d1118] border-t-4 border-[#0a0d14]">
           <div className="px-4 py-4 flex flex-col gap-2">
-            {links.map(([href, label]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className="h-pixel text-[10px] py-3 px-3 border-4 border-[#1f2740] text-white/90 hover:border-[#2ee892] hover:text-[#2ee892]"
-              >
-                {label}
-              </a>
-            ))}
+            {links.map(([href, label]) =>
+              label === "Team" ? (
+                <Link
+                  key={href}
+                  to="/team"
+                  className="h-pixel text-[10px] px-3 py-2 text-white/80 hover:text-[#2ee892] transition-colors"
+                >
+                  {label}
+                </Link>
+              ) : (
+                <a
+                  key={href}
+                  href={href}
+                  className="h-pixel text-[10px] px-3 py-2 text-white/80 hover:text-[#2ee892] transition-colors"
+                >
+                  {label}
+                </a>
+              )
+            )}
           </div>
         </div>
       )}
@@ -166,7 +174,7 @@ const Hero: React.FC = () => {
         className="absolute inset-0"
         style={{
           background:
-  "linear-gradient(180deg, #0d1118 0%, #13182a 30%, #1a2238 60%, #243049 100%)"
+            "linear-gradient(180deg, #0d1118 0%, #13182a 30%, #1a2238 60%, #243049 100%)"
         }}
       />
 
@@ -313,11 +321,11 @@ const PromoVideo: React.FC = () => {
 const About: React.FC = () => {
   const items = [
     { icon: "code", title: "Hackathon", desc: "Enter the arena, solve real-world quests, and level up your skills through innovation.", color: "#4be1ff" },
-    { icon: "users", title: "Community Events", desc: "Engage in collaborative activities, team-building sessions, and fun tech gatherings.", color: "#4be1ff"},
+    { icon: "users", title: "Community Events", desc: "Engage in collaborative activities, team-building sessions, and fun tech gatherings.", color: "#4be1ff" },
     { icon: "innovation", title: "Workshops", desc: "Gain real-world experience with hands-on workshops in cutting-edge technologies.", color: "#ffcc4b" },
     { icon: "team", title: "Networking", desc: "Connect with peers, alumni, and industry professionals to build meaningful relationships.", color: "#ff5fa2" },
     { icon: "circuit", title: "Guidance Session", desc: "Connect with experienced mentors for valuable insights on careers, skills, and opportunities.", color: "#4be1ff" },
-    {icon: "trophy", title: "Competitions", desc: "Challenge yourself through coding contests, quizzes, and technical competitions.", color: "#ffcc4b"}
+    { icon: "trophy", title: "Competitions", desc: "Challenge yourself through coding contests, quizzes, and technical competitions.", color: "#ffcc4b" }
   ] as const;
 
   return (
@@ -456,9 +464,8 @@ const Events: React.FC = () => {
           {events.map((e, i) => (
             <article
               key={e.title}
-              className={`pixel-card p-0 overflow-hidden card-tilt reveal group ${
-                e.featured ? "lg:col-span-2 lg:row-span-1" : ""
-              }`}
+              className={`pixel-card p-0 overflow-hidden card-tilt reveal group ${e.featured ? "lg:col-span-2 lg:row-span-1" : ""
+                }`}
               style={{ transitionDelay: `${i * 70}ms` }}
             >
               {/* card header art */}
@@ -551,17 +558,15 @@ const Achievements: React.FC = () => {
               <button
                 key={a.id}
                 onClick={() => toggle(a.id)}
-                className={`pixel-card p-5 text-left card-tilt reveal group ${
-                  isUnlocked ? "" : "opacity-60"
-                }`}
+                className={`pixel-card p-5 text-left card-tilt reveal group ${isUnlocked ? "" : "opacity-60"
+                  }`}
                 style={{ transitionDelay: `${i * 50}ms` }}
                 aria-pressed={isUnlocked}
               >
                 <div className="relative h-24 grid place-items-center mb-3 bg-[#0d1118] border-4 border-[#0a0d14]">
                   <div
-                    className={`transition-all duration-300 ${
-                      isUnlocked ? "group-hover:scale-110 animate-pulse-glow" : "grayscale"
-                    }`}
+                    className={`transition-all duration-300 ${isUnlocked ? "group-hover:scale-110 animate-pulse-glow" : "grayscale"
+                      }`}
                   >
                     {a.icon}
                   </div>
@@ -775,9 +780,8 @@ const TerminalField: React.FC<{
   inputRef?: React.RefObject<HTMLInputElement | null>;
 }> = ({ label, value, onChange, placeholder, type = "text", multiline, inputRef }) => {
   const [focused, setFocused] = useState(false);
-  const common = `w-full bg-[#0d1118] text-white h-mono text-lg px-3 py-2 border-4 ${
-    focused ? "border-[#2ee892]" : "border-[#1f2740]"
-  } outline-none transition-colors`;
+  const common = `w-full bg-[#0d1118] text-white h-mono text-lg px-3 py-2 border-4 ${focused ? "border-[#2ee892]" : "border-[#1f2740]"
+    } outline-none transition-colors`;
   return (
     <label className="block">
       <div className="h-pixel text-[9px] text-[#4be1ff] mb-2">
@@ -846,30 +850,30 @@ const Footer: React.FC = () => (
       <span className="h-pixel text-[8px] text-white/40">PRESS [START] TO CONTINUE</span>
     </div>
 
-   <div className="mt-8 flex justify-center">
-  <div className="relative w-full max-w-7xl py-6 overflow-hidden">
-    <img
-      src={footerLogo}
-      alt="ISTE"
-      className="relative z-10 w-[95%] max-w-[1500px] mx-auto footer-main"
-    />
+    <div className="mt-8 flex justify-center">
+      <div className="relative w-full max-w-7xl py-6 overflow-hidden">
+        <img
+          src={footerLogo}
+          alt="ISTE"
+          className="relative z-10 w-[95%] max-w-[1500px] mx-auto footer-main"
+        />
 
-    <img
-      src={footerLogo}
-      alt=""
-      aria-hidden="true"
-      className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-red"
-    />
+        <img
+          src={footerLogo}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-red"
+        />
 
-    <img
-      src={footerLogo}
-      alt=""
-      aria-hidden="true"
-      className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-blue"
-    />
-  </div>
-</div>
- 
+        <img
+          src={footerLogo}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-blue"
+        />
+      </div>
+    </div>
+
   </footer>
 );
 
