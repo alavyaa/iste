@@ -922,7 +922,6 @@ const App: React.FC = () => {
         <PromoVideo />
         <About />
         <Events />
-        <Team />
         <Achievements />
         <Gallery />
         <Contact />
