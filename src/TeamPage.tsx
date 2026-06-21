@@ -27,22 +27,50 @@ interface Department {
 // ─── SAMPLE DATA ────────────────────────────────────────────
 
 const leadershipData: LeadershipMember[] = [
-  {
-    label: "GUILD_MASTER",
-    name: "Hritik",
-    title: "President / Guild Master",
-    description:
-      "Final-year CS. Leads the guild with unwavering resolve. Believes semicolons are a personality trait and merge conflicts are character development.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face",
-  },
-  {
-    label: "QUEST_GIVER",
-    name: "Pranjal",
-    title: "Vice President / Quest Giver",
-    description:
-      "Organizes chaos into calendars. Hosts every event. The one who makes sure the guild actually does things instead of just talking about them.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop&crop=face",
-  },
+{
+label: "Managing Director",
+name: "Arsh Dhaliwal",
+title: "Managing Director, CGC University Mohali",
+description:
+"With a strong commitment to academic excellence, innovation, and student growth, the Managing Director plays a defining role in nurturing an ecosystem where initiatives like ISTE can thrive with vision and impact.",
+image: "/team/arsh-dhaliwal.webp",
+},
+
+{
+label: "Vice Chancellor",
+name: "Dr. Vinay Goyal",
+title: "Vice Chancellor, CGC University Mohali",
+description:
+"The Vice Chancellor shapes the academic direction of the institution, empowering students with research opportunities, technical exposure, and a forward-looking educational environment.",
+image: "/team/vinay-goyal.jpeg",
+},
+
+{
+label: "Pro Vice Chancellor",
+name: "Dr. Anish Gupta",
+title: "Pro Vice Chancellor, CGC University Mohali",
+description:
+"The Pro Vice Chancellor strengthens academic operations, institutional planning, and student-centered development, ensuring high-quality execution of ambitious educational and technical initiatives.",
+image: "/team/anish-gupta.jpeg",
+},
+
+{
+label: "Principal (CCE)",
+name: "Dr. Sajjan Singh",
+title: "Principal",
+description:
+"The Principal contributes through academic discipline, institutional excellence, and student empowerment, encouraging participation in transformative experiences and technical innovation.",
+image: "/team/sajjan-singh.jpeg",
+},
+
+{
+label: "Head of Department (Applied Science)",
+name: "Dr. Anmol Gautam",
+title: "Head of Department",
+description:
+"The Head of Department provides technical mentorship, academic guidance, and departmental leadership, supporting students in executing ideas that bridge creativity, innovation, and real-world relevance.",
+image: "/team/anmol-gautam.jpeg",
+},
 ];
 
 const departmentsData: Department[] = [
