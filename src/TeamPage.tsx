@@ -1,6 +1,54 @@
 import { useEffect, useState } from "react";
 import MemberCard from "./components/MemberCard";
 import PixelRevealImage from "./components/PixelRevealImage";
+import aditya from "./assets/images/aditya.jpeg";
+import AG from "./assets/images/AG.jpeg";
+import alavya from "./assets/images/alavya.jpeg";
+import anmol from "./assets/images/anmol.jpeg";
+
+import arnab from "./assets/images/arnab.jpeg";
+import arpan from "./assets/images/arpan.jpeg";
+import arsh from "./assets/images/arsh-dhaliwal.webp";
+
+
+
+import durgesh from "./assets/images/durgesh.png";
+
+import gaurav from "./assets/images/gaurav.jpeg";
+
+import hamza from "./assets/images/hamza.jpeg";
+import himanshu from "./assets/images/himanshu.jpeg";
+
+import jagriti from "./assets/images/jagriti.jpeg";
+
+import keshav from "./assets/images/keshav.jpeg";
+import khushboo from "./assets/images/khushboo.jpeg";
+import khushi from "./assets/images/khushi.png";
+import kushika from "./assets/images/kushika.jpeg";
+
+import lakshay from "./assets/images/lakshay.jpeg";
+
+import manish from "./assets/images/manish.jpeg";
+import member from "./assets/images/member.jpeg";
+
+import navin from "./assets/images/navin.jpeg";
+
+import pranjal from "./assets/images/pranjal.jpeg";
+import pratyush from "./assets/images/pratyush.jpeg";
+import priyansh from "./assets/images/priyansh.jpeg";
+
+import ranjeet from "./assets/images/ranjeet.jpeg";
+import ritu from "./assets/images/ritu.jpeg";
+
+import sajjan from "./assets/images/sajjan.jpeg";
+import samriti from "./assets/images/samriti.jpeg";
+import sarika from "./assets/images/sarika.jpeg";
+import shaurya from "./assets/images/shaurya.jpeg";
+
+import tanuja from "./assets/images/tanuja.jpeg";
+
+import vashu from "./assets/images/vashu.jpeg";
+import vc from "./assets/images/vc.jpeg";
 
 // ─── INTERFACES ─────────────────────────────────────────────
 
@@ -33,7 +81,7 @@ name: "Arsh Dhaliwal",
 title: "Managing Director, CGC University Mohali",
 description:
 "With a strong commitment to academic excellence, innovation, and student growth, the Managing Director plays a defining role in nurturing an ecosystem where initiatives like ISTE can thrive with vision and impact.",
-image: "/team/arsh-dhaliwal.webp",
+image: arsh ,
 },
 
 {
@@ -42,7 +90,7 @@ name: "Dr. Vinay Goyal",
 title: "Vice Chancellor, CGC University Mohali",
 description:
 "The Vice Chancellor shapes the academic direction of the institution, empowering students with research opportunities, technical exposure, and a forward-looking educational environment.",
-image: "/team/vinay-goyal.jpeg",
+image: vc ,
 },
 
 {
@@ -51,7 +99,7 @@ name: "Dr. Anish Gupta",
 title: "Pro Vice Chancellor, CGC University Mohali",
 description:
 "The Pro Vice Chancellor strengthens academic operations, institutional planning, and student-centered development, ensuring high-quality execution of ambitious educational and technical initiatives.",
-image: "/team/anish-gupta.jpeg",
+image: AG ,
 },
 
 {
@@ -60,7 +108,7 @@ name: "Dr. Sajjan Singh",
 title: "Principal",
 description:
 "The Principal contributes through academic discipline, institutional excellence, and student empowerment, encouraging participation in transformative experiences and technical innovation.",
-image: "/team/sajjan-singh.jpeg",
+image: sajjan ,
 },
 
 {
@@ -69,7 +117,7 @@ name: "Dr. Anmol Gautam",
 title: "Head of Department",
 description:
 "The Head of Department provides technical mentorship, academic guidance, and departmental leadership, supporting students in executing ideas that bridge creativity, innovation, and real-world relevance.",
-image: "/team/anmol-gautam.jpeg",
+image: anmol ,
 },
 ];
 
