@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import MemberCard from "./components/MemberCard";
 import PixelRevealImage from "./components/PixelRevealImage";
+
+import isteLogo from "./assets/iste.png";
 import footerLogo from "./assets/iste_footer.png";
+
 import aditya from "./assets/images/aditya.jpeg";
 import AG from "./assets/images/AG.jpeg";
 import alavya from "./assets/images/alavya.jpeg";
