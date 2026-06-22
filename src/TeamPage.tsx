@@ -54,6 +54,9 @@ import tanuja from "./assets/images/tanuja.jpeg";
 import vashu from "./assets/images/vashu.jpeg";
 import vc from "./assets/images/vc.jpeg";
 
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+
 // ─── INTERFACES ─────────────────────────────────────────────
 
 
@@ -544,6 +547,8 @@ const TeamPage: React.FC = () => {
   }, []);
 
   return (
+    <>
+    <Nav />
     <div className="min-h-screen bg-[#0b1121] text-white relative overflow-hidden">
       {/* Inject keyframes */}
       <style>{`
@@ -740,6 +745,9 @@ const TeamPage: React.FC = () => {
         </div>
       </div>
     </div>
+
+      <Footer />
+  </>
   );
 };
 
