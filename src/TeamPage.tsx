@@ -39,7 +39,7 @@ import navin from "./assets/images/navin.jpeg";
 
 import pranjal from "./assets/images/pranjal.jpeg";
 import pratyush from "./assets/images/pratyush.jpeg";
-import priyansh from "./assets/images/priyansh.jpeg";
+import priyansh from "./assets/images/priyansh.png";
 
 import ranjeet from "./assets/images/ranjeet.jpeg";
 import ritu from "./assets/images/ritu.jpeg";
