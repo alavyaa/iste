@@ -19,6 +19,8 @@ import isteLogo from "./assets/iste.png";
 import isteVideo from "./assets/iste.mp4";
 import footerLogo from "./assets/iste_footer.png";
 import { Link } from "react-router-dom";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 /* =========================================================
    PARTICLES — floating dots/stars/coins
