@@ -72,37 +72,10 @@ interface Department {
   members: TeamMember[];
 }
 
-// ─── SAMPLE DATA ────────────────────────────────────────────
+// ─── DATA ────────────────────────────────────────────
 
 const leadershipData: LeadershipMember[] = [
-{
-label: "Managing Director",
-name: "Arsh Dhaliwal",
-title: "Managing Director, CGC University Mohali",
-description:
-"With a strong commitment to academic excellence, innovation, and student growth, the Managing Director plays a defining role in nurturing an ecosystem where initiatives like ISTE can thrive with vision and impact.",
-image: arsh ,
-},
-
-{
-label: "Vice Chancellor",
-name: "Dr. Vinay Goyal",
-title: "Vice Chancellor, CGC University Mohali",
-description:
-"The Vice Chancellor shapes the academic direction of the institution, empowering students with research opportunities, technical exposure, and a forward-looking educational environment.",
-image: vc ,
-},
-
-{
-label: "Pro Vice Chancellor",
-name: "Dr. Anish Gupta",
-title: "Pro Vice Chancellor, CGC University Mohali",
-description:
-"The Pro Vice Chancellor strengthens academic operations, institutional planning, and student-centered development, ensuring high-quality execution of ambitious educational and technical initiatives.",
-image: AG ,
-},
-
-{
+  {
 label: "Principal (CCE)",
 name: "Dr. Sajjan Singh",
 title: "Principal",
@@ -127,14 +100,14 @@ const departmentsData: Department[] = [
     tag: "CORE_OPS",
     members: [
       {
-        name: "Aarav Patel",
-        role: "Core Coordinator",
+        name: "HRITHIK",
+        role: "PRESIDENT",
         image: member ,
       },
       {
-        name: "Sneha Iyer",
-        role: "Core Coordinator",
-        image: member ,
+        name: "PRANJAL",
+        role: "VICE PRESIDENT",
+        image: pranjal ,
       },
     ],
   },
