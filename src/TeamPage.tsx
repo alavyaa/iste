@@ -109,6 +109,31 @@ const departmentsData: Department[] = [
         role: "VICE PRESIDENT",
         image: pranjal ,
       },
+       {
+        name: "ARPAN",
+        role: "SECRETARY",
+        image: arpan ,
+      },
+       {
+        name: "TANUJA",
+        role: "TREASURER",
+        image: tanuja ,
+      },
+       {
+        name: "NAVIN",
+        role: "HEAD OD DOCUMENTATION",
+        image: navin ,
+      },
+       {
+        name: "KASTAB",
+        role: "EXECUTIVE",
+        image: kastab ,
+      },
+       {
+        name: "ARNAB",
+        role: "DATA ANALYST",
+        image: arnab ,
+      },
     ],
   },
   {
