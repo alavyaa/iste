@@ -127,7 +127,7 @@ const departmentsData: Department[] = [
        {
         name: "KASTAB",
         role: "EXECUTIVE",
-        image: kastab ,
+        image: member ,
       },
        {
         name: "ARNAB",
