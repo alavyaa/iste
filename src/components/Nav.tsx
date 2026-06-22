@@ -82,37 +82,37 @@ const Nav: React.FC = () => {
           {open ? "CLOSE" : "MENU"}
         </button>
       </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-[#0d1118] border-t-4 border-[#0a0d14]">
-          <div className="px-4 py-4 flex flex-col gap-2">
-           {links.map((link) =>
-             {links.map((link) =>
-  link.href === "/team" ? (
-    <Link
-      key={link.label}
-      to="/team"
-      onClick={() => setOpen(false)}
-      className="h-pixel text-[10px] py-3 px-3 border-4 border-[#1f2740] text-white/90 hover:border-[#2ee892] hover:text-[#2ee892]"
-    >
-      {link.label}
-    </Link>
-  ) : (
-    <a
-      key={link.label}
-      href={link.href}
-      onClick={() => setOpen(false)}
-      className="h-pixel text-[10px] py-3 px-3 border-4 border-[#1f2740] text-white/90 hover:border-[#2ee892] hover:text-[#2ee892]"
-    >
-      {link.label}
-    </a>
-  )
-)}
-          </div>
-        </div>
+{/* Mobile Menu */}
+{open && (
+  <div className="md:hidden bg-[#0d1118] border-t-4 border-[#0a0d14]">
+    <div className="px-4 py-4 flex flex-col gap-2">
+      {links.map((link) =>
+        link.href === "/team" ? (
+          <Link
+            key={link.label}
+            to="/team"
+            onClick={() => setOpen(false)}
+            className="h-pixel text-[10px] py-3 px-3 border-4 border-[#1f2740] text-white/90 hover:border-[#2ee892] hover:text-[#2ee892]"
+          >
+            {link.label}
+          </Link>
+        ) : (
+          <a
+            key={link.label}
+            href={link.href}
+            onClick={() => setOpen(false)}
+            className="h-pixel text-[10px] py-3 px-3 border-4 border-[#1f2740] text-white/90 hover:border-[#2ee892] hover:text-[#2ee892]"
+          >
+            {link.label}
+          </a>
+        )
       )}
-    </header>
+    </div>
+  </div>
+)}
+
+           </header>
   );
 };
 
+export default Nav;
