@@ -141,14 +141,39 @@ const departmentsData: Department[] = [
     tag: "TECH_DIVISION",
     members: [
       {
-        name: "Rohan Mehta",
-        role: "Bot Tamer / Tech Lead",
-        image: member,
+        name: "SHAURYA",
+        role: "DEV OPS DEVELOPER",
+        image: shaurya,
       },
       {
-        name: "Ishita Verma",
-        role: "Dev Ops Ninja",
-        image: member ,
+        name: "ALAVYA",
+        role: "FULL STACK DEVELOPER",
+        image: alavya,
+      },
+       {
+        name: "VISHWAS",
+        role: "UI",
+        image: vashu ,
+      },
+       {
+        name: "HAMZAUL",
+        role: "FULL STACK DEVELOPER",
+        image: hamza ,
+      },
+       {
+        name: "KESHAV",
+        role: "TECH MEMBER",
+        image: keshav ,
+      },
+       {
+        name: "KUSHIKA",
+        role: "TECH MEMBER",
+        image: kushika ,
+      },
+       {
+        name: "KHUSHBOO",
+        role: "TECH MEMBER",
+        image: khushboo ,
       },
     ],
   },
