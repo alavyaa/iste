@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
           <img
             src={isteLogo}
             alt="ISTE Logo"
-            className="w-10 h-10 object-contain pixelated"
+            className="w-10 h-10 object-contain"
           />
 
           <div className="leading-none">
