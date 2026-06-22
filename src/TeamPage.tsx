@@ -288,46 +288,111 @@ const departmentsData: Department[] = [
     tag: "PIXEL_MAGES",
     members: [
       {
-        name: "Sara Khan",
-        role: "Pixel Mage / Designer",
+        name: "DARSHI",
+        role: "GRAPHIC LEAD",
         image: member ,
       },
       {
-        name: "Arjun Das",
-        role: "UI Alchemist",
-        image: member ,
+        name: "KHUSHI",
+        role: "GRAPHIC DESIGNER",
+        image: khushi ,
       },
     ],
   },
   {
-    name: "Content Team",
+    name: "Logistics Team",
     tag: "LORE_KEEPERS",
     members: [
       {
-        name: "Diya Sharma",
-        role: "Lore Keeper",
+        name: "MD. ADIL",
+        role: "LoGISTICS LEAD",
         image: member ,
       },
       {
-        name: "Kabir Singh",
-        role: "Scroll Writer",
-        image: member ,
+        name: "RITU",
+        role: "LOGISTICS MEMBER",
+        image: ritu ,
+      },
+      {
+        name: "SAMRITI",
+        role: "LOGISTICS MEMBER",
+        image: samriti ,
       },
     ],
   },
   {
-    name: "PR Team",
+    name: "Event Team",
     tag: "HERALD_SQUAD",
     members: [
       {
-        name: "Meera Nair",
-        role: "Innovation Scout",
-        image: member ,
+        name: "RANJEET",
+        role: "EVENT LEAD",
+        image: ranjeet ,
       },
       {
-        name: "Vikram Joshi",
-        role: "Outreach Knight",
+        name: "ADITYA",
+        role: "MARKETING LEAD",
+        image: aditya ,
+      },
+       {
+        name: "DURGESH",
+        role: "SPONSORSHIP LEAD",
+        image: durgesh ,
+      },
+       {
+        name: "MANISH",
+        role: "SPONSORSHIP HEAD",
+        image: manish ,
+      },
+       {
+        name: "PRIYANSH",
+        role: "MEMBER",
+        image: priyansh ,
+      },
+       {
+        name: "HIMANSHU",
+        role: "MEMBER",
+        image: himanshu ,
+      },
+       {
+        name: "ANUSHA",
+        role: "MEMBER",
         image: member ,
+      },
+       {
+        name: "SARIKA",
+        role: "CREATIVE HEAD",
+        image: sarika ,
+      },
+       {
+        name: "PAAVNI",
+        role: "MEMBER",
+        image: member ,
+      },
+       {
+        name: "RAVEENA",
+        role: "MEMBER",
+        image: member ,
+      },
+       {
+        name: "GAURAV",
+        role: "MEMBER",
+        image: gaurav ,
+      },
+       {
+        name: "PRATYUSH",
+        role: "MEMBER",
+        image: pratyush ,
+      },
+       {
+        name: "LAKSHAY",
+        role: "MEMBER",
+        image: lakshay ,
+      },
+       {
+        name: "JAGRITI",
+        role: "MEMBER",
+        image: jagriti ,
       },
     ],
   },
