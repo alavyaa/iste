@@ -2,7 +2,63 @@ import { useEffect, useState } from "react";
 import MemberCard from "./components/MemberCard";
 import PixelRevealImage from "./components/PixelRevealImage";
 
+import isteLogo from "./assets/iste.png";
+import footerLogo from "./assets/iste_footer.png";
+
+import aditya from "./assets/images/aditya.jpeg";
+import AG from "./assets/images/AG.jpeg";
+import alavya from "./assets/images/alavya.jpeg";
+import anmol from "./assets/images/anmol.jpeg";
+
+import arnab from "./assets/images/arnab.jpeg";
+import arpan from "./assets/images/arpan.jpeg";
+import arsh from "./assets/images/arsh-dhaliwal.webp";
+
+
+
+import durgesh from "./assets/images/durgesh.png";
+
+import gaurav from "./assets/images/gaurav.jpeg";
+
+import hamza from "./assets/images/hamza.jpeg";
+import himanshu from "./assets/images/himanshu.jpeg";
+
+import jagriti from "./assets/images/jagriti.jpeg";
+
+import keshav from "./assets/images/keshav.jpeg";
+import khushboo from "./assets/images/khushboo.jpeg";
+import khushi from "./assets/images/khushi.png";
+import kushika from "./assets/images/kushika.jpeg";
+
+import lakshay from "./assets/images/lakshay.jpeg";
+
+import manish from "./assets/images/manish.jpeg";
+import member from "./assets/images/member.jpeg";
+
+import navin from "./assets/images/navin.jpeg";
+
+import pranjal from "./assets/images/pranjal.jpeg";
+import pratyush from "./assets/images/pratyush.jpeg";
+import priyansh from "./assets/images/priyansh.png";
+
+import ranjeet from "./assets/images/ranjeet.jpeg";
+import ritu from "./assets/images/ritu.jpeg";
+
+import sajjan from "./assets/images/sajjan.jpeg";
+import samriti from "./assets/images/samriti.jpeg";
+import sarika from "./assets/images/sarika.jpeg";
+import shaurya from "./assets/images/shaurya.jpeg";
+
+import tanuja from "./assets/images/tanuja.jpeg";
+
+import vashu from "./assets/images/vashu.jpeg";
+import vc from "./assets/images/vc.jpeg";
+
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+
 // ─── INTERFACES ─────────────────────────────────────────────
+
 
 interface LeadershipMember {
   label: string;
@@ -24,43 +80,16 @@ interface Department {
   members: TeamMember[];
 }
 
-// ─── SAMPLE DATA ────────────────────────────────────────────
+// ─── DATA ────────────────────────────────────────────
 
 const leadershipData: LeadershipMember[] = [
-{
-label: "Managing Director",
-name: "Arsh Dhaliwal",
-title: "Managing Director, CGC University Mohali",
-description:
-"With a strong commitment to academic excellence, innovation, and student growth, the Managing Director plays a defining role in nurturing an ecosystem where initiatives like ISTE can thrive with vision and impact.",
-image: "/team/arsh-dhaliwal.webp",
-},
-
-{
-label: "Vice Chancellor",
-name: "Dr. Vinay Goyal",
-title: "Vice Chancellor, CGC University Mohali",
-description:
-"The Vice Chancellor shapes the academic direction of the institution, empowering students with research opportunities, technical exposure, and a forward-looking educational environment.",
-image: "/team/vinay-goyal.jpeg",
-},
-
-{
-label: "Pro Vice Chancellor",
-name: "Dr. Anish Gupta",
-title: "Pro Vice Chancellor, CGC University Mohali",
-description:
-"The Pro Vice Chancellor strengthens academic operations, institutional planning, and student-centered development, ensuring high-quality execution of ambitious educational and technical initiatives.",
-image: "/team/anish-gupta.jpeg",
-},
-
-{
+  {
 label: "Principal (CCE)",
 name: "Dr. Sajjan Singh",
 title: "Principal",
 description:
 "The Principal contributes through academic discipline, institutional excellence, and student empowerment, encouraging participation in transformative experiences and technical innovation.",
-image: "/team/sajjan-singh.jpeg",
+image: sajjan ,
 },
 
 {
@@ -69,7 +98,7 @@ name: "Dr. Anmol Gautam",
 title: "Head of Department",
 description:
 "The Head of Department provides technical mentorship, academic guidance, and departmental leadership, supporting students in executing ideas that bridge creativity, innovation, and real-world relevance.",
-image: "/team/anmol-gautam.jpeg",
+image: anmol ,
 },
 ];
 
@@ -79,14 +108,39 @@ const departmentsData: Department[] = [
     tag: "CORE_OPS",
     members: [
       {
-        name: "Aarav Patel",
-        role: "Core Coordinator",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+        name: "HRITHIK",
+        role: "PRESIDENT",
+        image: member ,
       },
       {
-        name: "Sneha Iyer",
-        role: "Core Coordinator",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+        name: "PRANJAL",
+        role: "VICE PRESIDENT",
+        image: pranjal ,
+      },
+       {
+        name: "ARPAN",
+        role: "SECRETARY",
+        image: arpan ,
+      },
+       {
+        name: "TANUJA",
+        role: "TREASURER",
+        image: tanuja ,
+      },
+       {
+        name: "NAVIN",
+        role: "HEAD OD DOCUMENTATION",
+        image: navin ,
+      },
+       {
+        name: "KASTAB",
+        role: "EXECUTIVE",
+        image: member ,
+      },
+       {
+        name: "ARNAB",
+        role: "DATA ANALYST",
+        image: arnab ,
       },
     ],
   },
@@ -95,14 +149,39 @@ const departmentsData: Department[] = [
     tag: "TECH_DIVISION",
     members: [
       {
-        name: "Rohan Mehta",
-        role: "Bot Tamer / Tech Lead",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+        name: "SHAURYA",
+        role: "DEV OPS DEVELOPER",
+        image: shaurya,
       },
       {
-        name: "Ishita Verma",
-        role: "Dev Ops Ninja",
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+        name: "ALAVYA",
+        role: "FULL STACK DEVELOPER",
+        image: alavya,
+      },
+       {
+        name: "VISHWAS",
+        role: "UI",
+        image: vashu ,
+      },
+       {
+        name: "HAMZAUL",
+        role: "FULL STACK DEVELOPER",
+        image: hamza ,
+      },
+       {
+        name: "KESHAV",
+        role: "TECH MEMBER",
+        image: keshav ,
+      },
+       {
+        name: "KUSHIKA",
+        role: "TECH MEMBER",
+        image: kushika ,
+      },
+       {
+        name: "KHUSHBOO",
+        role: "TECH MEMBER",
+        image: khushboo ,
       },
     ],
   },
@@ -111,46 +190,111 @@ const departmentsData: Department[] = [
     tag: "PIXEL_MAGES",
     members: [
       {
-        name: "Sara Khan",
-        role: "Pixel Mage / Designer",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
+        name: "DARSHI",
+        role: "GRAPHIC LEAD",
+        image: member ,
       },
       {
-        name: "Arjun Das",
-        role: "UI Alchemist",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+        name: "KHUSHI",
+        role: "GRAPHIC DESIGNER",
+        image: khushi ,
       },
     ],
   },
   {
-    name: "Content Team",
+    name: "Logistics Team",
     tag: "LORE_KEEPERS",
     members: [
       {
-        name: "Diya Sharma",
-        role: "Lore Keeper",
-        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=face",
+        name: "MD. ADIL",
+        role: "LoGISTICS LEAD",
+        image: member ,
       },
       {
-        name: "Kabir Singh",
-        role: "Scroll Writer",
-        image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
+        name: "RITU",
+        role: "LOGISTICS MEMBER",
+        image: ritu ,
+      },
+      {
+        name: "SAMRITI",
+        role: "LOGISTICS MEMBER",
+        image: samriti ,
       },
     ],
   },
   {
-    name: "PR Team",
+    name: "Event Team",
     tag: "HERALD_SQUAD",
     members: [
       {
-        name: "Meera Nair",
-        role: "Innovation Scout",
-        image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&crop=face",
+        name: "RANJEET",
+        role: "EVENT LEAD",
+        image: ranjeet ,
       },
       {
-        name: "Vikram Joshi",
-        role: "Outreach Knight",
-        image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop&crop=face",
+        name: "ADITYA",
+        role: "MARKETING LEAD",
+        image: aditya ,
+      },
+       {
+        name: "DURGESH",
+        role: "SPONSORSHIP LEAD",
+        image: durgesh ,
+      },
+       {
+        name: "MANISH",
+        role: "SPONSORSHIP HEAD",
+        image: manish ,
+      },
+       {
+        name: "PRIYANSH",
+        role: "MEMBER",
+        image: priyansh ,
+      },
+       {
+        name: "HIMANSHU",
+        role: "MEMBER",
+        image: himanshu ,
+      },
+       {
+        name: "ANUSHA",
+        role: "MEMBER",
+        image: member ,
+      },
+       {
+        name: "SARIKA",
+        role: "CREATIVE HEAD",
+        image: sarika ,
+      },
+       {
+        name: "PAAVNI",
+        role: "MEMBER",
+        image: member ,
+      },
+       {
+        name: "RAVEENA",
+        role: "MEMBER",
+        image: member ,
+      },
+       {
+        name: "GAURAV",
+        role: "MEMBER",
+        image: gaurav ,
+      },
+       {
+        name: "PRATYUSH",
+        role: "MEMBER",
+        image: pratyush ,
+      },
+       {
+        name: "LAKSHAY",
+        role: "MEMBER",
+        image: lakshay ,
+      },
+       {
+        name: "JAGRITI",
+        role: "MEMBER",
+        image: jagriti ,
       },
     ],
   },
@@ -403,6 +547,8 @@ const TeamPage: React.FC = () => {
   }, []);
 
   return (
+    <>
+    <Nav />
     <div className="min-h-screen bg-[#0b1121] text-white relative overflow-hidden">
       {/* Inject keyframes */}
       <style>{`
@@ -599,6 +745,9 @@ const TeamPage: React.FC = () => {
         </div>
       </div>
     </div>
+
+      <Footer />
+  </>
   );
 };
 

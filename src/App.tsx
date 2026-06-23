@@ -19,6 +19,8 @@ import isteLogo from "./assets/iste.png";
 import isteVideo from "./assets/iste.mp4";
 import footerLogo from "./assets/iste_footer.png";
 import { Link } from "react-router-dom";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 /* =========================================================
    PARTICLES — floating dots/stars/coins
@@ -55,110 +57,6 @@ const Particles: React.FC = () => {
   );
 };
 
-/* =========================================================
-   NAV
-   ========================================================= */
-const Nav: React.FC = () => {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const links = [
-    ["#about", "About"],
-    ["#events", "Events"],
-    ["/team", "Team"],
-    ["#achievements", "Achievements"],
-    ["#gallery", "Gallery"],
-    ["#contact", "Contact"],
-  ];
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled
-          ? "bg-[#07090d]/90 backdrop-blur border-b-4 border-[#0a0d14]"
-          : "bg-transparent"
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-
-        {/* Logo */}
-        <a href="#top" className="flex items-center gap-3 group">
-          <img
-            src={isteLogo}
-            alt="ISTE Logo"
-            className="w-10 h-10 object-contain pixelated"
-          />
-
-          <div className="leading-none">
-            <div className="h-pixel text-[11px] text-[#2ee892]">
-              ISTE
-            </div>
-            <div className="h-mono text-[#4be1ff] text-sm">
-              build · learn · innovate
-            </div>
-          </div>
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {links.map(([href, label]) => (
-            <a
-              key={href}
-              href={href}
-              className="h-pixel text-[10px] px-3 py-2 text-white/80 hover:text-[#2ee892] transition-colors"
-            >
-              {label}
-            </a>
-          ))}
-          <a href="#contact" className="pixel-btn ml-3">
-            Join ISTE
-          </a>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden h-pixel text-[10px] px-3 py-2 border-4 border-[#2ee892] text-[#2ee892]"
-          aria-label="Toggle menu"
-        >
-          {open ? "CLOSE" : "MENU"}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-[#0d1118] border-t-4 border-[#0a0d14]">
-          <div className="px-4 py-4 flex flex-col gap-2">
-            {links.map(([href, label]) =>
-              label === "Team" ? (
-                <Link
-                  key={href}
-                  to="/team"
-                  className="h-pixel text-[10px] px-3 py-2 text-white/80 hover:text-[#2ee892] transition-colors"
-                >
-                  {label}
-                </Link>
-              ) : (
-                <a
-                  key={href}
-                  href={href}
-                  className="h-pixel text-[10px] px-3 py-2 text-white/80 hover:text-[#2ee892] transition-colors"
-                >
-                  {label}
-                </a>
-              )
-            )}
-          </div>
-        </div>
-      )}
-    </header>
-  );
-};
 
 /* =========================================================
    HERO
@@ -816,66 +714,6 @@ const TerminalField: React.FC<{
   );
 };
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-const Footer: React.FC = () => (
-  <footer className="relative bg-[#07090d] border-t-4 border-[#0a0d14] py-10">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
-      <div>
-        <div className="h-pixel text-[11px] text-[#2ee892] mb-2">ISTE</div>
-        <p className="h-mono text-white/60 text-sm">Building innovation block by block — one student, one commit, one quest at a time.</p>
-      </div>
-      <div>
-        <div className="h-pixel text-[10px] text-[#4be1ff] mb-3">GUILDS</div>
-        <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Code Dojo</a></li>
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Robotics Lab</a></li>
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Innovation Hub</a></li>
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Circuit Society</a></li>
-        </ul>
-      </div>
-      <div>
-        <div className="h-pixel text-[10px] text-[#ffcc4b] mb-3">LINKS</div>
-        <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#events" className="h-mono hover:text-[#2ee892]">Events</a></li>
-          <li><a href="#team" className="h-mono hover:text-[#2ee892]">Team</a></li>
-          <li><a href="#contact" className="h-mono hover:text-[#2ee892]">Contact</a></li>
-          <li><a href="#" className="h-mono hover:text-[#2ee892]">GitHub</a></li>
-        </ul>
-      </div>
-    </div>
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t-2 border-[#1f2740] flex flex-wrap items-center justify-between gap-3">
-      <span className="h-mono text-white/50 text-sm">© 2026 ISTE Society. All XP reserved.</span>
-      <span className="h-pixel text-[8px] text-white/40">PRESS [START] TO CONTINUE</span>
-    </div>
-
-    <div className="mt-8 flex justify-center">
-      <div className="relative w-full max-w-7xl py-6 overflow-hidden">
-        <img
-          src={footerLogo}
-          alt="ISTE"
-          className="relative z-10 w-[95%] max-w-[1500px] mx-auto footer-main"
-        />
-
-        <img
-          src={footerLogo}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-red"
-        />
-
-        <img
-          src={footerLogo}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-[95%] max-w-[1500px] mx-auto footer-glitch-blue"
-        />
-      </div>
-    </div>
-
-  </footer>
-);
 
 /* =========================================================
    SHARED
