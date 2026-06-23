@@ -511,7 +511,7 @@ const Achievements: React.FC = () => {
 const Gallery: React.FC = () => {
   // CSS-only "pixel art" gallery using gradients & SVG icons — no external images needed
   const items = [
-    { title: "Hackathon 2025", tag: "EVENT", grad: "linear-gradient(135deg,#2ee892,#1aa3d6)", icon: "rocket" as const },
+    { title: "Hackathon 2025", tag: "EVENT", image: "/gallery/hackathon.jpeg", icon: "rocket" as const },
     { title: "Bot Arena", tag: "COMPETITION", grad: "linear-gradient(135deg,#ff5fa2,#ffcc4b)", icon: "robot" as const },
     { title: "Code Dojo", tag: "WORKSHOP", grad: "linear-gradient(135deg,#4be1ff,#2ee892)", icon: "code" as const },
     { title: "Circuit Lab", tag: "WORKSHOP", grad: "linear-gradient(135deg,#ffcc4b,#ff5fa2)", icon: "circuit" as const },
