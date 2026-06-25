@@ -24,7 +24,6 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
   const progressRef = useRef(0);
   const targetProgressRef = useRef(0);
 
-  // Load image
   useEffect(() => {
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -41,7 +40,7 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
 
   const drawPixelated = useCallback(
     (ctx: CanvasRenderingContext2D, img: HTMLImageElement, w: number, h: number, level: number) => {
-      // level: 0 = fully pixelated, 1 = fully clear
+
       if (level >= 0.99) {
         ctx.imageSmoothingEnabled = true;
         ctx.drawImage(img, 0, 0, w, h);
@@ -56,11 +55,11 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
         return;
       }
 
-      // Draw small version then scale up
+    
       const smallW = Math.ceil(w / currentPixelSize);
       const smallH = Math.ceil(h / currentPixelSize);
 
-      // Create offscreen canvas for small version
+
       const offscreen = document.createElement("canvas");
       offscreen.width = smallW;
       offscreen.height = smallH;
@@ -70,11 +69,10 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
       offCtx.imageSmoothingEnabled = false;
       offCtx.drawImage(img, 0, 0, smallW, smallH);
 
-      // Draw scaled up version (pixelated)
+
       ctx.imageSmoothingEnabled = false;
       ctx.drawImage(offscreen, 0, 0, smallW, smallH, 0, 0, w, h);
 
-      // Overlay the clear image with opacity based on progress for smooth transition
       if (level > 0.5) {
         ctx.imageSmoothingEnabled = true;
         ctx.globalAlpha = (level - 0.5) * 2;
@@ -85,7 +83,6 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
     [pixelSize]
   );
 
-  // Animation loop
   useEffect(() => {
     if (!imageLoaded) return;
 
@@ -131,7 +128,6 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
       ctx.clearRect(0, 0, w, h);
       drawPixelated(ctx, img, w, h, progressRef.current);
 
-      // Add scanline effect when pixelated
       if (progressRef.current < 0.8) {
         ctx.fillStyle = `rgba(0, 0, 0, ${0.08 * (1 - progressRef.current)})`;
         for (let y = 0; y < h; y += 3) {
@@ -139,7 +135,6 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
         }
       }
 
-      // Add subtle green/cyan tint overlay when pixelated
       if (progressRef.current < 0.5) {
         ctx.fillStyle = `rgba(0, 255, 200, ${0.05 * (1 - progressRef.current * 2)})`;
         ctx.fillRect(0, 0, w, h);
@@ -157,7 +152,6 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
     };
   }, [imageLoaded, isHovered, drawPixelated, revealDuration]);
 
-  // Handle resize
   useEffect(() => {
     if (!imageLoaded) return;
 
@@ -189,14 +183,14 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
         className="absolute inset-0 w-full h-full"
         aria-label={alt}
       />
-      {/* Fallback for accessibility */}
+     
       <img
         src={src}
         alt={alt}
         className="w-full h-full object-cover opacity-0 pointer-events-none"
         aria-hidden="true"
       />
-      {/* Pixel grid overlay for extra retro feel */}
+     
       {!isHovered && (
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-300"
