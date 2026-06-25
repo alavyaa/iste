@@ -29,7 +29,7 @@ html, body {
   image-rendering: crisp-edges;
 }
 
-/* Chunky pixel border using box-shadows (no anti-aliasing) */
+
 .pixel-border {
   position: relative;
   background: #131826;
@@ -95,7 +95,7 @@ html, body {
     inset 0 0 0 4px #2ee892,
     6px 6px 0 0 #0a0d14; }
 
-/* Scanline overlay for retro CRT vibes */
+
 .scanlines::before {
   content: "";
   position: absolute;
@@ -111,7 +111,7 @@ html, body {
   mix-blend-mode: overlay;
 }
 
-/* Pixel heading */
+
 .h-pixel {
   font-family: "Press Start 2P", system-ui, sans-serif;
   letter-spacing: 1px;
@@ -122,7 +122,7 @@ html, body {
   font-family: "VT323", ui-monospace, monospace;
 }
 
-/* Floating particles */
+
 @keyframes floatY {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -171,7 +171,7 @@ html, body {
 .animate-coin { animation: coinFlip 2.4s linear infinite; }
 .animate-shine { animation: shine 2.6s ease-in-out infinite; }
 
-/* Pixel cloud (CSS) */
+
 .pixel-cloud {
   background:
     radial-gradient(circle at 25% 60%, #4be1ff 4px, transparent 5px),
@@ -182,15 +182,15 @@ html, body {
   filter: drop-shadow(0 0 6px rgba(75,225,255,0.4));
 }
 
-/* Selection */
+
 ::selection { background: #2ee892; color: #07090d; }
 
-/* Scrollbar */
+
 ::-webkit-scrollbar { width: 12px; height: 12px; }
 ::-webkit-scrollbar-track { background: #0d1118; }
 ::-webkit-scrollbar-thumb { background: #2ee892; border: 2px solid #0d1118; }
 
-/* Reduce motion */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -200,18 +200,16 @@ html, body {
   }
 }
 
-/* Section reveal */
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms ease, transform 700ms ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-/* Card hover pixel tilt */
+
 .card-tilt { transition: transform 200ms ease, box-shadow 200ms ease; }
 .card-tilt:hover { transform: translate(-3px,-3px) rotate(-1deg); }
 
 
-/* =========================================================
-   FOOTER GLITCH LOGO
-   ========================================================= */
+
 
 .footer-main {
   position: relative;
