@@ -1,27 +1,17 @@
 import React from "react";
-
-/* =========================================================
-   PIXEL ART COMPONENTS — built with SVG <rect> grids
-   ========================================================= */
-
 type PixelProps = { size?: number; className?: string };
 
-/** A walking adventurer character (16x20 grid scaled). */
 export const PixelHero: React.FC<PixelProps & { walking?: boolean }> = ({
   size = 6,
   className = "",
   walking = true,
 }) => {
-  // Color palette
-  const SK = "#f1c79b"; // skin
-  const HR = "#3a2a1a"; // hair
-  const SH = "#2ee892"; // shirt emerald
-  const PT = "#1aa3d6"; // pants cyan
-  const SHO = "#0a0d14"; // shoes
+  const SK = "#f1c79b"; 
+  const HR = "#3a2a1a"; 
+  const SH = "#2ee892"; 
+  const PT = "#1aa3d6"; 
+  const SHO = "#0a0d14"; 
   const EYE = "#0a0d14";
-
-  // 16 wide x 20 tall pixel grid (1 = color, 0 = transparent)
-  // legend: 1=hair 2=skin 3=eye 4=shirt 5=pants 6=shoes
   const map = [
     "0000111100000000",
     "0001111111000000",
@@ -65,7 +55,6 @@ export const PixelHero: React.FC<PixelProps & { walking?: boolean }> = ({
   );
 };
 
-/** Pixel sun */
 export const PixelSun: React.FC<PixelProps> = ({ size = 8, className = "" }) => (
   <svg width={16 * size} height={16 * size} viewBox="0 0 16 16" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -88,8 +77,6 @@ export const PixelSun: React.FC<PixelProps> = ({ size = 8, className = "" }) => 
     )}
   </svg>
 );
-
-/** Pixel moon */
 export const PixelMoon: React.FC<PixelProps> = ({ size = 8, className = "" }) => (
   <svg width={14 * size} height={14 * size} viewBox="0 0 14 14" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -110,11 +97,9 @@ export const PixelMoon: React.FC<PixelProps> = ({ size = 8, className = "" }) =>
     )}
   </svg>
 );
-
-/** Pixel tree */
 export const PixelTree: React.FC<PixelProps> = ({ size = 6, className = "" }) => (
   <svg width={12 * size} height={16 * size} viewBox="0 0 12 16" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
-    {/* leaves */}
+    
     {[
       "000111000000",
       "001111100000",
@@ -130,7 +115,7 @@ export const PixelTree: React.FC<PixelProps> = ({ size = 6, className = "" }) =>
         <rect key={`l-${x}-${y}`} x={x} y={y} width={1} height={1} fill={c === "1" ? (x % 3 === 0 ? "#14a35d" : "#2ee892") : "transparent"} />
       ))
     )}
-    {/* trunk */}
+   
     {[
       "000110000000",
       "000110000000",
@@ -146,7 +131,6 @@ export const PixelTree: React.FC<PixelProps> = ({ size = 6, className = "" }) =>
   </svg>
 );
 
-/** Pixel cloud */
 export const PixelCloud: React.FC<PixelProps> = ({ size = 6, className = "" }) => (
   <svg width={20 * size} height={8 * size} viewBox="0 0 20 8" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -166,7 +150,6 @@ export const PixelCloud: React.FC<PixelProps> = ({ size = 6, className = "" }) =
   </svg>
 );
 
-/** Pixel trophy */
 export const PixelTrophy: React.FC<PixelProps & { color?: string }> = ({ size = 6, className = "", color = "#ffcc4b" }) => (
   <svg width={14 * size} height={14 * size} viewBox="0 0 14 14" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -194,7 +177,6 @@ export const PixelTrophy: React.FC<PixelProps & { color?: string }> = ({ size = 
   </svg>
 );
 
-/** Pixel medal/badge */
 export const PixelMedal: React.FC<PixelProps & { color?: string; ring?: string }> = ({
   size = 6,
   className = "",
@@ -202,7 +184,7 @@ export const PixelMedal: React.FC<PixelProps & { color?: string; ring?: string }
   ring = "#ffcc4b",
 }) => (
   <svg width={14 * size} height={14 * size} viewBox="0 0 14 14" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
-    {/* ribbon */}
+   
     {[
       "100000000001",
       "110000000011",
@@ -214,7 +196,6 @@ export const PixelMedal: React.FC<PixelProps & { color?: string; ring?: string }
         <rect key={`r-${x}-${y}`} x={x + 1} y={y + 1} width={1} height={1} fill={c === "1" ? ring : "transparent"} />
       ))
     )}
-    {/* medal disc */}
     {[
       "000111110000",
       "001122221000",
@@ -233,7 +214,7 @@ export const PixelMedal: React.FC<PixelProps & { color?: string; ring?: string }
   </svg>
 );
 
-/** Pixel coin */
+
 export const PixelCoin: React.FC<PixelProps> = ({ size = 6, className = "" }) => (
   <svg width={10 * size} height={10 * size} viewBox="0 0 10 10" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -254,7 +235,6 @@ export const PixelCoin: React.FC<PixelProps> = ({ size = 6, className = "" }) =>
   </svg>
 );
 
-/** Pixel star */
 export const PixelStar: React.FC<PixelProps> = ({ size = 4, className = "" }) => (
   <svg width={7 * size} height={7 * size} viewBox="0 0 7 7" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -271,7 +251,6 @@ export const PixelStar: React.FC<PixelProps> = ({ size = 4, className = "" }) =>
   </svg>
 );
 
-/** Pixel heart */
 export const PixelHeart: React.FC<PixelProps> = ({ size = 4, className = "" }) => (
   <svg width={9 * size} height={8 * size} viewBox="0 0 9 8" className={`pixelated ${className}`} shapeRendering="crispEdges" aria-hidden="true">
     {[
@@ -292,7 +271,6 @@ export const PixelHeart: React.FC<PixelProps> = ({ size = 4, className = "" }) =
   </svg>
 );
 
-/** Pixel icons for About section — chunky 12x12 icons */
 export const PixelIcon: React.FC<{
   type: "code" | "robot" | "innovation" | "team" | "circuit" | "rocket" | "users" | "trophy" ;
   size?: number;
@@ -413,7 +391,6 @@ trophy: [
   );
 };
 
-/** Pixel avatar — customizable by skin/hair/shirt colors */
 export const PixelAvatar: React.FC<{
   size?: number;
   skin?: string;
@@ -453,7 +430,6 @@ export const PixelAvatar: React.FC<{
   );
 };
 
-/** Pixel landscape background (mountains + ground) */
 export const PixelLandscape: React.FC<{ className?: string }> = ({ className = "" }) => (
   <svg
     className={`absolute inset-0 w-full h-full ${className}`}
@@ -462,7 +438,7 @@ export const PixelLandscape: React.FC<{ className?: string }> = ({ className = "
     shapeRendering="crispEdges"
     aria-hidden="true"
   >
-    {/* far mountains */}
+    
     <g fill="#1a2238">
       <rect x="0" y="120" width="120" height="80" />
       <rect x="20" y="100" width="80" height="20" />
@@ -472,7 +448,7 @@ export const PixelLandscape: React.FC<{ className?: string }> = ({ className = "
       <rect x="380" y="115" width="132" height="85" />
       <rect x="410" y="100" width="60" height="15" />
     </g>
-    {/* near mountains */}
+    
     <g fill="#243049">
       <rect x="80" y="140" width="120" height="60" />
       <rect x="120" y="125" width="40" height="15" />
@@ -480,21 +456,21 @@ export const PixelLandscape: React.FC<{ className?: string }> = ({ className = "
       <rect x="310" y="120" width="60" height="15" />
       <rect x="430" y="138" width="120" height="62" />
     </g>
-    {/* ground */}
+    
     <rect x="0" y="170" width="512" height="30" fill="#14a35d" />
     <rect x="0" y="168" width="512" height="2" fill="#2ee892" />
-    {/* grass tufts */}
+    
     {Array.from({ length: 32 }).map((_, i) => (
       <rect key={i} x={i * 16 + (i % 3)} y={166} width="2" height="2" fill="#6cffb0" />
     ))}
-    {/* dirt specks */}
+    
     {Array.from({ length: 24 }).map((_, i) => (
       <rect key={`d-${i}`} x={(i * 23) % 512} y={185 + (i % 3) * 3} width="2" height="2" fill="#0a4a2a" />
     ))}
   </svg>
 );
 
-/** Pixel circuit pattern (background) */
+
 export const CircuitPattern: React.FC<{ className?: string; color?: string }> = ({
   className = "",
   color = "rgba(46,232,146,0.18)",
