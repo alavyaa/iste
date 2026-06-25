@@ -1,7 +1,4 @@
 import footerLogo from "../assets/iste_footer.png";
-/* =========================================================
-   FOOTER
-   ========================================================= */
 const Footer: React.FC = () => (
   <footer className="relative bg-[#07090d] border-t-4 border-[#0a0d14] py-10">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
