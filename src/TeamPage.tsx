@@ -57,7 +57,6 @@ import vc from "./assets/images/vc.jpeg";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
-// ─── INTERFACES ─────────────────────────────────────────────
 
 
 interface LeadershipMember {
@@ -80,7 +79,7 @@ interface Department {
   members: TeamMember[];
 }
 
-// ─── DATA ────────────────────────────────────────────
+
 
 const leadershipData: LeadershipMember[] = [
   {
@@ -300,7 +299,6 @@ const departmentsData: Department[] = [
   },
 ];
 
-// ─── FLOATING PIXELS COMPONENT ──────────────────────────────
 
 const FloatingPixels: React.FC = () => {
   const [pixels] = useState(() =>
@@ -335,7 +333,7 @@ const FloatingPixels: React.FC = () => {
   );
 };
 
-// ─── LEADERSHIP SECTION COMPONENT ───────────────────────────
+
 
 interface LeadershipSectionProps {
   member: LeadershipMember;
@@ -354,13 +352,13 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
         isReversed ? "md:flex-row-reverse" : "md:flex-row"
       } gap-6 md:gap-10 items-center border border-slate-700/50 bg-[#131c31]/80 p-5 sm:p-6 md:p-8 rounded-sm relative overflow-hidden group transition-all duration-500 hover:border-[#00ffc8]/30`}
     >
-      {/* Corner brackets */}
+    
       <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#00ffc8]/50" />
       <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#00ffc8]/50" />
       <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#00ffc8]/50" />
       <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#00ffc8]/50" />
 
-      {/* Scanline overlay */}
+  
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.015]"
         style={{
@@ -369,10 +367,10 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
         }}
       />
 
-      {/* Image */}
+     
       <div className="w-full md:w-2/5 flex-shrink-0">
         <div className="relative border border-slate-700/60 rounded-sm overflow-hidden bg-[#0a1020]">
-          {/* Image label */}
+        
           <div className="absolute top-0 left-0 z-20 bg-[#0a1020]/90 border-r border-b border-slate-700/60 px-2 py-1">
             <span
               className="text-[8px] text-[#00ffc8] tracking-widest"
@@ -390,14 +388,14 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
             pixelSize={16}
             revealDuration={700}
           />
-          {/* Bottom decorative bar */}
+          
           <div className="h-1 bg-gradient-to-r from-[#00ffc8] via-[#00e5ff] to-transparent" />
         </div>
       </div>
 
-      {/* Text Content */}
+      
       <div className="w-full md:w-3/5 flex flex-col justify-center">
-        {/* Tag */}
+        
         <div className="inline-flex items-center gap-2 mb-3">
           <div className="w-1.5 h-1.5 bg-[#39ff14] animate-pulse" />
           <span
@@ -411,7 +409,7 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
           <div className="h-px flex-1 bg-gradient-to-r from-[#39ff14]/30 to-transparent ml-2" />
         </div>
 
-        {/* Name */}
+
         <h3
           className="text-white text-lg sm:text-xl md:text-2xl font-bold tracking-wide mb-1"
           style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
@@ -419,7 +417,7 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
           {member.name}
         </h3>
 
-        {/* Title */}
+
         <p
           className="text-[#00ffc8] text-[10px] sm:text-xs tracking-widest uppercase mb-4"
           style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
@@ -427,7 +425,6 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
           {member.title}
         </p>
 
-        {/* Divider */}
         <div className="flex gap-1 mb-4">
           {Array.from({ length: 40 }).map((_, i) => (
             <div
@@ -443,7 +440,6 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
           ))}
         </div>
 
-        {/* Description */}
         <p
           className="text-slate-400 text-xs sm:text-sm leading-relaxed tracking-wide"
           style={{ fontFamily: '"Courier New", monospace' }}
@@ -451,7 +447,6 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
           {member.description}
         </p>
 
-        {/* Status bar */}
         <div className="mt-5 flex items-center gap-3">
           <span className="flex items-center gap-1.5">
             <span className="text-pink-500 text-sm">♥</span>
@@ -479,7 +474,7 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
   );
 };
 
-// ─── DEPARTMENT SECTION ─────────────────────────────────────
+
 
 interface DepartmentSectionProps {
   department: Department;
@@ -492,9 +487,9 @@ const DepartmentSection: React.FC<DepartmentSectionProps> = ({
 }) => {
   return (
     <div className="relative">
-      {/* Section Header */}
+      
       <div className="flex items-center gap-4 mb-6 sm:mb-8">
-        {/* Index tag */}
+       
         <div className="border border-[#00ffc8]/40 px-3 py-1.5 bg-[#0a1020] rounded-sm flex-shrink-0">
           <span
             className="text-[#00ffc8] text-[9px] sm:text-[10px] tracking-widest"
@@ -506,11 +501,11 @@ const DepartmentSection: React.FC<DepartmentSectionProps> = ({
           </span>
         </div>
 
-        {/* Line */}
+      
         <div className="h-px flex-1 bg-gradient-to-r from-[#00ffc8]/30 via-slate-700/50 to-transparent" />
       </div>
 
-      {/* Department Name */}
+   
       <h3
         className="text-white text-base sm:text-lg md:text-xl tracking-wide mb-6 sm:mb-8"
         style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
@@ -518,7 +513,7 @@ const DepartmentSection: React.FC<DepartmentSectionProps> = ({
         {department.name}
       </h3>
 
-      {/* Members Grid */}
+   
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
         {department.members.map((member, memberIndex) => (
           <MemberCard
@@ -533,15 +528,15 @@ const DepartmentSection: React.FC<DepartmentSectionProps> = ({
   );
 };
 
-// ─── MAIN TEAM PAGE ─────────────────────────────────────────
+
 
 const TeamPage: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Scroll to top on mount
+   
     window.scrollTo(0, 0);
-    // Trigger entrance animation
+  
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
@@ -550,7 +545,7 @@ const TeamPage: React.FC = () => {
     <>
     <Nav />
     <div className="min-h-screen bg-[#0b1121] text-white relative overflow-hidden">
-      {/* Inject keyframes */}
+      
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -591,10 +586,10 @@ const TeamPage: React.FC = () => {
         }
       `}</style>
 
-      {/* Floating pixels background */}
+      
       <FloatingPixels />
 
-      {/* Scanline effect overlay */}
+     
       <div
         className="fixed inset-0 pointer-events-none z-[1] opacity-[0.02]"
         style={{
@@ -603,7 +598,7 @@ const TeamPage: React.FC = () => {
         }}
       />
 
-      {/* Main content */}
+      
       <div
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20"
         style={{
@@ -611,9 +606,9 @@ const TeamPage: React.FC = () => {
           transition: "opacity 0.6s ease",
         }}
       >
-        {/* ─── PAGE HEADER ───────────────────────────────── */}
+        
         <div className="text-center mb-16 sm:mb-20 md:mb-24">
-          {/* Quest tag */}
+          
           <div className="inline-flex items-center justify-center mb-6">
             <div className="border border-[#00ffc8]/60 px-4 py-2 bg-[#0a1020]/80 rounded-sm">
               <span
@@ -627,7 +622,7 @@ const TeamPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Title */}
+          
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 tracking-wide"
             style={{
@@ -638,7 +633,7 @@ const TeamPage: React.FC = () => {
             Meet the Guild
           </h1>
 
-          {/* Subtitle */}
+        
           <p
             className="text-slate-400 text-xs sm:text-sm tracking-wider max-w-xl mx-auto"
             style={{
@@ -651,7 +646,7 @@ const TeamPage: React.FC = () => {
             Each with their own class.
           </p>
 
-          {/* Decorative divider */}
+         
           <div className="flex items-center justify-center gap-1.5 mt-6">
             {Array.from({ length: 5 }).map((_, i) => (
               <div
@@ -668,9 +663,9 @@ const TeamPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ─── LEADERSHIP SECTION ────────────────────────── */}
+       
         <div className="mb-16 sm:mb-20 md:mb-24">
-          {/* Section Tag */}
+         
           <div className="flex items-center gap-4 mb-8 sm:mb-10">
             <div className="border border-[#00e5ff]/40 px-3 py-1.5 bg-[#0a1020] rounded-sm">
               <span
@@ -692,7 +687,6 @@ const TeamPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ─── TEAM DEPARTMENTS ──────────────────────────── */}
         <div className="space-y-14 sm:space-y-16 md:space-y-20">
           {departmentsData.map((department, index) => (
             <DepartmentSection
@@ -703,7 +697,6 @@ const TeamPage: React.FC = () => {
           ))}
         </div>
 
-        {/* ─── FOOTER DECORATION ─────────────────────────── */}
         <div className="mt-16 sm:mt-20 md:mt-24 text-center">
           <div className="flex items-center justify-center gap-1.5 mb-4">
             {Array.from({ length: 30 }).map((_, i) => (
