@@ -22,9 +22,6 @@ import { Link } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
-/* =========================================================
-   PARTICLES — floating dots/stars/coins
-   ========================================================= */
 const Particles: React.FC = () => {
   const dots = Array.from({ length: 28 }).map((_, i) => ({
     id: i,
@@ -58,16 +55,13 @@ const Particles: React.FC = () => {
 };
 
 
-/* =========================================================
-   HERO
-   ========================================================= */
 const Hero: React.FC = () => {
   return (
     <section
       id="top"
       className="relative min-h-[100svh] overflow-hidden pt-24 pb-12"
     >
-      {/* Sky */}
+
       <div
         className="absolute inset-0"
         style={{
@@ -76,12 +70,10 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* Sun */}
       <div className="absolute top-28 right-[8%] sm:right-[12%] z-10 animate-float">
         <PixelSun size={5} />
       </div>
 
-      {/* Clouds */}
       <div className="absolute top-32 left-[5%] z-10 animate-drift opacity-90">
         <PixelCloud size={4} />
       </div>
@@ -100,7 +92,6 @@ const Hero: React.FC = () => {
         <PixelCloud size={3} />
       </div>
 
-      {/* Trees */}
       <div className="absolute bottom-[18%] left-[6%] z-10 opacity-80">
         <PixelTree size={4} />
       </div>
@@ -113,10 +104,8 @@ const Hero: React.FC = () => {
         <PixelTree size={3} />
       </div>
 
-      {/* Landscape */}
       <PixelLandscape className="absolute bottom-0 inset-x-0 h-[40%] z-0" />
 
-      {/* Character */}
       <div
         className="absolute bottom-[14%] left-[10%] z-20 animate-drift"
         style={{ animationDuration: "12s" }}
@@ -124,7 +113,6 @@ const Hero: React.FC = () => {
         <PixelHero size={5} walking />
       </div>
 
-      {/* Hero Content */}
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 mb-6 px-3 py-2 border-4 border-[#2ee892] bg-[#0d1118]/80">
@@ -157,7 +145,6 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* Stats */}
           <div className="mt-10 grid grid-cols-3 gap-3 max-w-xl">
             {[
               { label: "MEMBERS", value: "240+", color: "#2ee892" },
@@ -181,7 +168,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2">
         <span className="h-pixel text-[8px] text-[#0d1118]">
           SCROLL
@@ -195,9 +181,7 @@ const Hero: React.FC = () => {
   );
 };
 
-/* =========================================================
-   ISTE VIDEO
-   ========================================================= */
+
 const PromoVideo: React.FC = () => {
   return (
     <section className="w-full">
@@ -213,9 +197,7 @@ const PromoVideo: React.FC = () => {
     </section>
   );
 };
-/* =========================================================
-   ABOUT — pixel dialogue boxes
-   ========================================================= */
+
 const About: React.FC = () => {
   const items = [
     { icon: "code", title: "Hackathon", desc: "Enter the arena, solve real-world quests, and level up your skills through innovation.", color: "#4be1ff" },
@@ -241,7 +223,7 @@ const About: React.FC = () => {
               className="pixel-card p-5 sm:p-6 card-tilt reveal"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              {/* dialogue tail */}
+              
               <div className="absolute -bottom-3 left-8 w-6 h-6 bg-[#131826] border-r-4 border-b-4 border-[#0a0d14] rotate-45" />
               <div className="flex items-start gap-4">
                 <div
@@ -258,7 +240,7 @@ const About: React.FC = () => {
                   <p className="text-white/70 text-sm leading-relaxed">{it.desc}</p>
                 </div>
               </div>
-              {/* dialogue footer */}
+             
               <div className="mt-5 pt-3 border-t-2 border-dashed border-[#1f2740] flex items-center justify-between">
                 <span className="h-mono text-[#4be1ff] text-sm">▸ press start</span>
                 <span className="h-pixel text-[8px] text-white/40">LV.{i + 2}</span>
@@ -267,7 +249,7 @@ const About: React.FC = () => {
           ))}
         </div>
 
-        {/* Mission dialogue */}
+        
         <div className="mt-12 max-w-4xl mx-auto reveal">
           <div className="pixel-card p-6 sm:p-8 relative">
             <div className="absolute -top-4 left-6 h-pixel text-[9px] px-3 py-1 bg-[#2ee892] text-[#07090d]">
@@ -285,9 +267,6 @@ const About: React.FC = () => {
   );
 };
 
-/* =========================================================
-   EVENTS — game cards
-   ========================================================= */
 const Events: React.FC = () => {
   const events = [
     {
@@ -366,7 +345,7 @@ const Events: React.FC = () => {
                 }`}
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              {/* card header art */}
+              
               <div
                 className="relative h-32 overflow-hidden"
                 style={{
@@ -378,14 +357,14 @@ const Events: React.FC = () => {
                     <PixelIcon type={e.icon} size={5} />
                   </div>
                 </div>
-                {/* rarity ribbon */}
+                
                 <div
                   className="absolute top-3 right-3 h-pixel text-[8px] px-2 py-1"
                   style={{ background: e.rarityColor, color: "#07090d" }}
                 >
                   ★ {e.rarity.toUpperCase()}
                 </div>
-                {/* shine */}
+               
                 <div className="absolute inset-0 overflow-hidden">
                   <div
                     className="absolute top-0 -left-1/2 h-full w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"
@@ -404,9 +383,6 @@ const Events: React.FC = () => {
                   <span className="flex items-center gap-2 h-pixel text-[9px] text-[#ffcc4b]">
                     <PixelCoin size={3} /> {e.reward}
                   </span>
-                  {/* <button className="h-pixel text-[9px] text-[#2ee892] hover:text-white transition-colors">
-                    ENROLL ▸
-                  </button> */}
                 </div>
               </div>
             </article>
@@ -417,16 +393,11 @@ const Events: React.FC = () => {
   );
 };
 
-/* =========================================================
-   TEAM — stats-style character cards
-   ========================================================= */
+
 <Link to="/team">
   Team
 </Link>
 
-/* =========================================================
-   ACHIEVEMENTS
-   ========================================================= */
 const Achievements: React.FC = () => {
   const [unlocked, setUnlocked] = useState<Record<string, boolean>>({
     first: true, hack: true, robot: true, lead: true,
@@ -487,7 +458,7 @@ const Achievements: React.FC = () => {
           })}
         </div>
 
-        {/* Achievement unlock toast preview */}
+
         <div className="mt-10 max-w-md mx-auto reveal">
           <div className="pixel-card p-4 flex items-center gap-4 bg-[#0d1118]">
             <div className="animate-coin">
@@ -505,11 +476,7 @@ const Achievements: React.FC = () => {
   );
 };
 
-/* =========================================================
-   GALLERY — pixel-framed image cards
-   ========================================================= */
 const Gallery: React.FC = () => {
-  // CSS-only "pixel art" gallery using gradients & SVG icons — no external images needed
   const items = [
     { title: "Hackathon 2025", tag: "EVENT", image: "/gallery/hackathon.jpeg", icon: "rocket" as const },
     { title: "Bot Arena", tag: "COMPETITION", grad: "linear-gradient(135deg,#ff5fa2,#ffcc4b)", icon: "robot" as const },
@@ -536,7 +503,7 @@ const Gallery: React.FC = () => {
                   className="absolute inset-0 grid place-items-center transition-transform duration-500 group-hover:scale-150"
                   style={{ background: it.grad }}
                 >
-                  {/* pixel grid overlay */}
+                  
                   <div
                     className="absolute inset-0 opacity-30"
                     style={{
@@ -548,7 +515,7 @@ const Gallery: React.FC = () => {
                   <div className="relative scale-150 group-hover:scale-[2] transition-transform duration-500">
                     <PixelIcon type={it.icon} size={6} />
                   </div>
-                  {/* corner sparkles */}
+                  
                   <div className="absolute top-2 right-2 animate-twinkle"><PixelStar size={2} /></div>
                   <div className="absolute bottom-2 left-2 animate-twinkle" style={{ animationDelay: "0.6s" }}>
                     <PixelCoin size={3} />
@@ -567,9 +534,7 @@ const Gallery: React.FC = () => {
   );
 };
 
-/* =========================================================
-   CONTACT — retro terminal form
-   ========================================================= */
+
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -577,10 +542,7 @@ const Contact: React.FC = () => {
   const [sent, setSent] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // useEffect(() => {
-  //   const t = setTimeout(() => inputRef.current?.focus(), 600);
-  //   return () => clearTimeout(t);
-  // }, []);
+ 
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -600,7 +562,6 @@ const Contact: React.FC = () => {
         <SectionHeader kicker="QUEST_07" title="Send a Transmission" subtitle="Open the terminal. Type your message. Press ENTER." />
 
         <div className="pixel-card p-0 mt-12 overflow-hidden scanlines relative">
-          {/* terminal title bar */}
           <div className="flex items-center justify-between px-4 py-2 bg-[#0d1118] border-b-4 border-[#0a0d14]">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 bg-[#ff5fa2]" />
@@ -714,10 +675,6 @@ const TerminalField: React.FC<{
   );
 };
 
-
-/* =========================================================
-   SHARED
-   ========================================================= */
 const SectionHeader: React.FC<{ kicker: string; title: string; subtitle: string }> = ({
   kicker,
   title,
@@ -733,11 +690,8 @@ const SectionHeader: React.FC<{ kicker: string; title: string; subtitle: string 
   </div>
 );
 
-/* =========================================================
-   APP
-   ========================================================= */
 const App: React.FC = () => {
-  // Reveal on scroll
+
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>(".reveal");
     const io = new IntersectionObserver(
