@@ -490,10 +490,10 @@ const Achievements: React.FC = () => {
 
 const Gallery: React.FC = () => {
   const items = [
-    { title: "Hackathon 2025", tag: "EVENT", image: "/gallery/hackathon.jpeg",  icon: "robot" as const },
+    { title: "Hackathon 2025", tag: "EVENT", image: "/Gallery/hackathon.jpeg",  icon: "robot" as const },
     { title: "Bot Arena", tag: "COMPETITION", grad: "linear-gradient(135deg,#ff5fa2,#ffcc4b)", icon: "robot" as const },
     { title: "Code Dojo", tag: "WORKSHOP", grad: "linear-gradient(135deg,#4be1ff,#2ee892)", icon: "code" as const },
-    { title: "Circuit Lab", tag: "WORKSHOP", grad: "linear-gradient(135deg,#ffcc4b,#ff5fa2)", icon: "circuit" as const },
+    { title: "Circuit Lab", tag: "WORKSHOP",image: "/Gallery/session.jpg", icon: "circuit" as const },
     { title: "Innovation Day", tag: "MEETUP", grad: "linear-gradient(135deg,#1aa3d6,#0a0d14)", icon: "innovation" as const },
     { title: "Team Offsite", tag: "GUILD", grad: "linear-gradient(135deg,#ff5fa2,#4be1ff)", icon: "team" as const },
   ];
