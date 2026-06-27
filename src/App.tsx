@@ -511,10 +511,13 @@ const Gallery: React.FC = () => {
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden border-4 border-[#0a0d14]">
-                <div
-                  className="absolute inset-0 grid place-items-center transition-transform duration-500 group-hover:scale-150"
-                  style={{ background: it.grad }}
-                >
+               <div className="absolute inset-0 overflow-hidden">
+  <img
+    src={it.image}
+    alt={it.title}
+    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+  />
+  <div className="absolute inset-0 bg-black/25" />
                   
                   <div
                     className="absolute inset-0 opacity-30"
