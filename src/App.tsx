@@ -399,36 +399,53 @@ const Events: React.FC = () => {
 </Link>
 
 const Achievements: React.FC = () => {
-  const [unlocked, setUnlocked] = useState<Record<string, boolean>>({
-    first: true, hack: true, robot: true, lead: true,
-  });
-  const list = [
-    { id: "first", title: "First Commit", desc: "Wrote your first line of code.", icon: <PixelMedal size={5} color="#4be1ff" ring="#2ee892" />, tier: "Bronze" },
-    { id: "hack", title: "Hackathon Hero", desc: "Shipped a project in 48 hours.", icon: <PixelTrophy size={5} color="#ffcc4b" />, tier: "Gold" },
-    { id: "robot", title: "Bot Tamer", desc: "Built and programmed a robot.", icon: <PixelMedal size={5} color="#2ee892" ring="#ffcc4b" />, tier: "Silver" },
-    { id: "lead", title: "Guild Captain", desc: "Led a team to victory.", icon: <PixelTrophy size={5} color="#ff5fa2" />, tier: "Pink" },
-    { id: "innov", title: "Innovator", desc: "Launched a side-project to the world.", icon: <PixelMedal size={5} color="#ffcc4b" ring="#ff5fa2" />, tier: "Gold" },
-    { id: "open", title: "Open Source Hero", desc: "Merged your first PR upstream.", icon: <PixelMedal size={5} color="#4be1ff" ring="#2ee892" />, tier: "Silver" },
-    { id: "teach", title: "Mentor", desc: "Taught a workshop to 20+ peers.", icon: <PixelTrophy size={5} color="#2ee892" />, tier: "Emerald" },
-    { id: "legend", title: "Legend", desc: "Held the office of President.", icon: <PixelTrophy size={5} color="#ffcc4b" />, tier: "Mythic" },
-  ];
+ const [unlocked, setUnlocked] = useState<Record<string, boolean>>({
+  bestClub: true,
+  bestHackathon: true,
+  sponsored: true,
+});
+ const list = [
+  {
+    id: "bestClub",
+    title: "Best Club / Society",
+    desc: "Recognized as the Best Club/Society of the year 2025 for outstanding technical events, innovation, and student engagement.",
+    icon: <PixelTrophy size={5} color="#ffcc4b" />,
+    tier: "2025",
+  },
 
-  const toggle = (id: string) => setUnlocked((u) => ({ ...u, [id]: !u[id] }));
+  {
+    id: "bestHackathon",
+    title: "Best Hackathon Club",
+    desc: "Honoured for organizing impactful hackathons and creating a thriving competitive programming and innovation culture.",
+    icon: <PixelMedal size={5} color="#4be1ff" ring="#2ee892" />,
+    tier: "Gold",
+  },
+
+  {
+    id: "sponsored",
+    title: "Most Sponsored Club",
+    desc: "Recognized for establishing valuable industry partnerships and securing the highest number of sponsorships.",
+    icon: <PixelCoin size={5} />,
+    tier: "Diamond",
+  },
+];
 
   return (
     <section id="achievements" className="relative py-20 sm:py-28 bg-[#0a0d14]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <SectionHeader kicker="QUEST_05" title="Achievements" subtitle="Click a badge to toggle unlock. Collect them all." />
+       <SectionHeader
+  kicker="QUEST_05"
+  title="Our Achievements"
+  subtitle="Milestones that reflect our journey of innovation, excellence, and impact."
+/>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-12">
+        <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
           {list.map((a, i) => {
             const isUnlocked = !!unlocked[a.id];
             return (
-              <button
+               <div
                 key={a.id}
-                onClick={() => toggle(a.id)}
-                className={`pixel-card p-5 text-left card-tilt reveal group ${isUnlocked ? "" : "opacity-60"
-                  }`}
+                className="pixel-card p-5 text-left card-tilt reveal group"
                 style={{ transitionDelay: `${i * 50}ms` }}
                 aria-pressed={isUnlocked}
               >
@@ -444,16 +461,11 @@ const Achievements: React.FC = () => {
                       <PixelStar size={2} className="animate-twinkle" />
                     </div>
                   )}
-                  {!isUnlocked && (
-                    <div className="absolute inset-0 grid place-items-center bg-[#0a0d14]/60">
-                      <span className="h-pixel text-[10px] text-white/70">🔒 LOCKED</span>
-                    </div>
-                  )}
                 </div>
                 <div className="h-pixel text-[9px] text-[#ffcc4b] mb-1">★ {a.tier.toUpperCase()}</div>
                 <h3 className="h-pixel text-[11px] text-white mb-2 leading-snug">{a.title}</h3>
                 <p className="text-white/60 text-xs leading-relaxed">{a.desc}</p>
-              </button>
+              </div>
             );
           })}
         </div>
@@ -465,8 +477,8 @@ const Achievements: React.FC = () => {
               <PixelCoin size={4} />
             </div>
             <div className="flex-1">
-              <div className="h-pixel text-[9px] text-[#ffcc4b]">★ ACHIEVEMENT UNLOCKED</div>
-              <div className="h-mono text-[#2ee892] text-lg">+100 XP — First Commit</div>
+              <div className="h-pixel text-[9px] text-[#ffcc4b]">★ ISTE HALL OF FAME</div>
+              <div className="h-mono text-[#2ee892] text-lg">Recognized. Rewarded. Respected.</div>
             </div>
             <PixelHeart size={3} />
           </div>
