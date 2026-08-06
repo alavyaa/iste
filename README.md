@@ -1,8 +1,8 @@
-# ISTE CGC Jhanjeri Website
+# ISTE CGC UNIVERSITY Website
 
-A modern, interactive, and visually engaging website designed for the ISTE student chapter at CGC Jhanjeri. The platform showcases the club's vision, events, achievements, team members, and technical initiatives while providing an immersive user experience.
+A modern, interactive, and visually engaging website designed for the ISTE student chapter at CGC UNIVERSITY. The platform showcases the club's vision, events, achievements, team members, and technical initiatives while providing an immersive user experience.
 
-## ✨ Features
+##  Features
 
 - Modern and responsive design
 - Interactive animations and smooth transitions
@@ -17,7 +17,7 @@ A modern, interactive, and visually engaging website designed for the ISTE stude
 - Optimized performance and user experience
 - Professional and futuristic UI
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - HTML5
@@ -29,7 +29,7 @@ A modern, interactive, and visually engaging website designed for the ISTE stude
 - Modern Animations
 - Interactive Components
 
-## 📂 Project Structure
+##  Project Structure
 ISTE-Website/
 │
 ├── index.html
@@ -47,27 +47,27 @@ ISTE-Website/
 └── README.md
 
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/iste-website.git
+git clone https://github.com/alavyaa/iste.git
 ```
 
-## 🚀 Run the Project
+##  Run the Project
 
 Simply open `iste-omega.vercel.app` in your browser.
 
 ---
 
-## 🎯 Purpose
+##  Purpose
 
 This website was developed to strengthen the online presence of the ISTE student chapter by providing students with easy access to information about events, opportunities, workshops, and club activities.
 
 ---
 
-## 🌟 Highlights
+##  Highlights
 
 * Clean and professional design
 * Student-focused experience
@@ -76,7 +76,7 @@ This website was developed to strengthen the online presence of the ISTE student
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 * Event registration system
 * Admin dashboard
@@ -87,12 +87,14 @@ This website was developed to strengthen the online presence of the ISTE student
 
 ---
 
-## 👩‍💻 Developed By
+##  Developed By
 
 **Alavya Bajpai**
+**Shaurya Pratap Singh**
+
 
 B.Tech (Artificial Intelligence & Data Science)
-CGC Jhanjeri
+CGC UNIVERSITY
 
 ---
 
