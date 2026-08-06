@@ -7,13 +7,6 @@ const Footer: React.FC = () => (
         <p className="h-mono text-white/60 text-sm">Building innovation block by block — one student, one commit, one quest at a time.</p>
       </div>
       <div>
-        <div className="h-pixel text-[10px] text-[#4be1ff] mb-3">GUILDS</div>
-        <ul className="space-y-1 text-white/70 text-sm">
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Code Dojo</a></li>
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Robotics Lab</a></li>
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Innovation Hub</a></li>
-          <li><a href="#about" className="h-mono hover:text-[#2ee892]">Circuit Society</a></li>
-        </ul>
       </div>
       <div>
         <div className="h-pixel text-[10px] text-[#ffcc4b] mb-3">LINKS</div>

@@ -270,65 +270,65 @@ const About: React.FC = () => {
 const Events: React.FC = () => {
   const events = [
     {
-      title: "Hack the Campus",
+      title: "Coming Soon",
       tag: "HACKATHON",
       rarity: "Legendary",
       rarityColor: "#ffcc4b",
-      date: "MAR 14–16",
+      date: "COMING SOON",
       reward: "+500 XP",
-      desc: "48-hour build sprint. Solo or squad. Cash prizes & intern interviews.",
+      desc: "",
       icon: "rocket" as const,
       featured: true,
     },
     {
-      title: "Python Dojo: Loops & Legends",
-      tag: "WORKSHOP",
-      rarity: "Common",
-      rarityColor: "#a3a3a3",
-      date: "FEB 22",
-      reward: "+50 XP",
-      desc: "From zero to hero in three sessions. Bring a laptop.",
-      icon: "code" as const,
-    },
-    {
-      title: "Bot Brawl Arena",
-      tag: "COMPETITION",
-      rarity: "Epic",
-      rarityColor: "#ff5fa2",
-      date: "APR 05",
-      reward: "+250 XP",
-      desc: "Line-following, maze-solving, sumo-bots. May the best circuit win.",
+      title: "Monster Event",
+      tag: "GAMING",
+      rarity: "Legendary",
+      rarityColor: "#ffcc4b",
+      date: "AUG 19–20",
+      reward: "+500 XP",
+      desc: "BGMI game event. Squad up and dominate.",
       icon: "robot" as const,
     },
     {
-      title: "Innovation Marathon",
-      tag: "IDEATHON",
-      rarity: "Epic",
-      rarityColor: "#ff5fa2",
-      date: "APR 19",
-      reward: "+300 XP",
-      desc: "12 hours. One idea. Pitch to a panel of founders.",
-      icon: "innovation" as const,
-    },
-    {
-      title: "Circuit Crafting 101",
+      title: "GitHub Workshop",
       tag: "WORKSHOP",
       rarity: "Common",
       rarityColor: "#a3a3a3",
-      date: "FEB 28",
-      reward: "+75 XP",
-      desc: "Soldering, sensors, and your first microcontroller.",
+      date: "COMING SOON",
+      reward: "+50 XP",
+      desc: "Stay tuned for details.",
+      icon: "code" as const,
+    },
+    {
+      title: "Cybersec Workshop",
+      tag: "WORKSHOP",
+      rarity: "Common",
+      rarityColor: "#a3a3a3",
+      date: "COMING SOON",
+      reward: "+50 XP",
+      desc: "Stay tuned for details.",
       icon: "circuit" as const,
     },
     {
-      title: "Industry Quest Night",
-      tag: "MEETUP",
-      rarity: "Rare",
-      rarityColor: "#4be1ff",
-      date: "MAR 02",
-      reward: "+100 XP",
-      desc: "Alumni from FAANG & startups share paths to landing your first role.",
-      icon: "team" as const,
+      title: "AI Workshop",
+      tag: "WORKSHOP",
+      rarity: "Common",
+      rarityColor: "#a3a3a3",
+      date: "COMING SOON",
+      reward: "+50 XP",
+      desc: "Stay tuned for details.",
+      icon: "innovation" as const,
+    },
+    {
+      title: "Web Dev Workshop",
+      tag: "WORKSHOP",
+      rarity: "Common",
+      rarityColor: "#a3a3a3",
+      date: "COMING SOON",
+      reward: "+50 XP",
+      desc: "Stay tuned for details.",
+      icon: "users" as const,
     },
   ];
 
@@ -492,10 +492,10 @@ const Gallery: React.FC = () => {
   const items = [
     { title: "Hackathon 2025", tag: "EVENT", image: "/Gallery/hackathon.jpg",  icon: "robot" as const },
     { title: "Competition", tag: "COMPETITION", image: "/Gallery/competition.jpeg", icon: "robot" as const },
-    { title: "Code Dojo", tag: "WORKSHOP", grad: "linear-gradient(135deg,#4be1ff,#2ee892)", icon: "code" as const },
-    { title: "Circuit Lab", tag: "WORKSHOP",image: "/Gallery/session.jpg", icon: "circuit" as const },
-    { title: "Innovation Day", tag: "MEETUP", grad: "linear-gradient(135deg,#1aa3d6,#0a0d14)", icon: "innovation" as const },
-    { title: "Team Offsite", tag: "GUILD", grad: "linear-gradient(135deg,#ff5fa2,#4be1ff)", icon: "team" as const },
+    { title: "Vault Heist", tag: "COMPETITION", grad: "linear-gradient(135deg,#4be1ff,#2ee892)", icon: "trophy" as const },
+    { title: "Code Clash", tag: "WORKSHOP",image: "/Gallery/session.jpg", icon: "code" as const },
+    { title: "Science Day", tag: "MEETUP", grad: "linear-gradient(135deg,#1aa3d6,#0a0d14)", icon: "innovation" as const },
+    { title: "Project Expo", tag: "EXPO", grad: "linear-gradient(135deg,#ff5fa2,#4be1ff)", icon: "rocket" as const },
   ];
 
   return (
@@ -631,12 +631,6 @@ const Contact: React.FC = () => {
                 </span>
               </div>
             </form>
-
-            <div className="mt-8 pt-4 border-t-2 border-dashed border-[#1f2740] flex flex-wrap gap-x-6 gap-y-2 h-mono text-base text-white/60">
-              <span><span className="text-[#ffcc4b]">⌖</span> guild_hall@iste.edu</span>
-              <span><span className="text-[#ffcc4b]">⌖</span> Room 204, CS Block</span>
-              <span><span className="text-[#ffcc4b]">⌖</span> @iste.society</span>
-            </div>
           </div>
         </div>
       </div>
