@@ -113,32 +113,32 @@ const departmentsData: Department[] = [
       },
       {
         name: "PRANJAL",
-        role: "VICE PRESIDENT",
+        role: "CORE MEMBER",
         image: pranjal ,
       },
        {
         name: "ARPAN",
-        role: "SECRETARY",
+        role: "CORE MEMBER",
         image: arpan ,
       },
        {
         name: "TANUJA",
-        role: "TREASURER",
+        role: "CORE MEMBER",
         image: tanuja ,
       },
        {
         name: "NAVIN",
-        role: "HEAD OD DOCUMENTATION",
+        role: "CORE MEMBER",
         image: navin ,
       },
        {
         name: "KASTAB",
-        role: "EXECUTIVE",
+        role: "CORE MEMBER",
         image: member ,
       },
        {
         name: "ARNAB",
-        role: "DATA ANALYST",
+        role: "CORE MEMBER",
         image: arnab ,
       },
     ],
@@ -149,37 +149,37 @@ const departmentsData: Department[] = [
     members: [
       {
         name: "SHAURYA",
-        role: "DEV OPS DEVELOPER",
+        role: "CORE MEMBER",
         image: shaurya,
       },
       {
         name: "ALAVYA",
-        role: "FULL STACK DEVELOPER",
+        role: "CORE MEMBER",
         image: alavya,
       },
        {
         name: "VISHWAS",
-        role: "UI",
+        role: "CORE MEMBER",
         image: vashu ,
       },
        {
         name: "HAMZAUL",
-        role: "FULL STACK DEVELOPER",
+        role: "CORE MEMBER",
         image: hamza ,
       },
        {
         name: "KESHAV",
-        role: "TECH MEMBER",
+        role: "CORE MEMBER",
         image: keshav ,
       },
        {
         name: "KUSHIKA",
-        role: "TECH MEMBER",
+        role: "CORE MEMBER",
         image: kushika ,
       },
        {
         name: "KHUSHBOO",
-        role: "TECH MEMBER",
+        role: "CORE MEMBER",
         image: khushboo ,
       },
     ],
@@ -190,12 +190,12 @@ const departmentsData: Department[] = [
     members: [
       {
         name: "DARSHI",
-        role: "GRAPHIC LEAD",
+        role: "CORE MEMBER",
         image: member ,
       },
       {
         name: "KHUSHI",
-        role: "GRAPHIC DESIGNER",
+        role: "CORE MEMBER",
         image: khushi ,
       },
     ],
@@ -206,17 +206,17 @@ const departmentsData: Department[] = [
     members: [
       {
         name: "MD. ADIL",
-        role: "LoGISTICS LEAD",
+        role: "CORE MEMBER",
         image: member ,
       },
       {
         name: "RITU",
-        role: "LOGISTICS MEMBER",
+        role: "CORE MEMBER",
         image: ritu ,
       },
       {
         name: "SAMRITI",
-        role: "LOGISTICS MEMBER",
+        role: "CORE MEMBER",
         image: samriti ,
       },
     ],
@@ -227,72 +227,57 @@ const departmentsData: Department[] = [
     members: [
       {
         name: "RANJEET",
-        role: "EVENT LEAD",
+        role: "CORE MEMBER",
         image: ranjeet ,
       },
       {
         name: "ADITYA",
-        role: "MARKETING LEAD",
+        role: "CORE MEMBER",
         image: aditya ,
       },
        {
         name: "DURGESH",
-        role: "SPONSORSHIP LEAD",
+        role: "CORE MEMBER",
         image: durgesh ,
       },
        {
         name: "MANISH",
-        role: "SPONSORSHIP HEAD",
+        role: "CORE MEMBER",
         image: manish ,
       },
        {
         name: "PRIYANSH",
-        role: "MEMBER",
+        role: "CORE MEMBER",
         image: priyansh ,
       },
        {
         name: "HIMANSHU",
-        role: "MEMBER",
+        role: "CORE MEMBER",
         image: himanshu ,
       },
        {
-        name: "ANUSHA",
-        role: "MEMBER",
-        image: member ,
-      },
-       {
         name: "SARIKA",
-        role: "CREATIVE HEAD",
+        role: "CORE MEMBER",
         image: sarika ,
       },
        {
-        name: "PAAVNI",
-        role: "MEMBER",
-        image: member ,
-      },
-       {
-        name: "RAVEENA",
-        role: "MEMBER",
-        image: member ,
-      },
-       {
         name: "GAURAV",
-        role: "MEMBER",
+        role: "CORE MEMBER",
         image: gaurav ,
       },
        {
         name: "PRATYUSH",
-        role: "MEMBER",
+        role: "CORE MEMBER",
         image: pratyush ,
       },
        {
         name: "LAKSHAY",
-        role: "MEMBER",
+        role: "CORE MEMBER",
         image: lakshay ,
       },
        {
         name: "JAGRITI",
-        role: "MEMBER",
+        role: "CORE MEMBER",
         image: jagriti ,
       },
     ],
