@@ -48,6 +48,7 @@ import sajjan from "./assets/images/sajjan.jpeg";
 import samriti from "./assets/images/samriti.jpeg";
 import sarika from "./assets/images/sarika.jpeg";
 import shaurya from "./assets/images/shaurya.jpeg";
+import sanya from "./assets/images/Sanya.jpeg";
 
 import tanuja from "./assets/images/tanuja.jpeg";
 
@@ -98,6 +99,15 @@ title: "Head of Department",
 description:
 "The Head of Department provides technical mentorship, academic guidance, and departmental leadership, supporting students in executing ideas that bridge creativity, innovation, and real-world relevance.",
 image: anmol ,
+},
+
+{
+label: "ISTE FACULTY COORDINATOR",
+name: "Sanya Batra",
+title: "Faculty Coordinator",
+description:
+"The Faculty Coordinator serves as a mentor and guide, fostering a culture of innovation, collaboration, and technical excellence within the student community, while facilitating the execution of impactful projects and initiatives.",
+image: sanya ,
 },
 ];
 
