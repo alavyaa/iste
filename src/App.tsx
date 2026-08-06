@@ -18,7 +18,6 @@ import {
 import isteLogo from "./assets/iste.png";
 import isteVideo from "./assets/iste.mp4";
 import footerLogo from "./assets/iste_footer.png";
-import { Link } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -394,9 +393,6 @@ const Events: React.FC = () => {
 };
 
 
-<Link to="/team">
-  Team
-</Link>
 
 const Achievements: React.FC = () => {
  const [unlocked, setUnlocked] = useState<Record<string, boolean>>({
@@ -638,6 +634,10 @@ const Contact: React.FC = () => {
               <a href="#" className="h-mono hover:text-[#2ee892]">LinkedIn</a>
               <a href="#" className="h-mono hover:text-[#2ee892]">Instagram</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
