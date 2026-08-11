@@ -336,39 +336,33 @@ const Events: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionHeader kicker="QUEST_03" title="Upcoming Events" subtitle="Choose your quest. Earn your XP." />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-12">
           {events.map((e, i) => (
             <article
               key={e.title}
-              className={`pixel-card p-0 overflow-hidden card-tilt reveal group ${e.featured ? "lg:col-span-2 lg:row-span-1" : ""
-                }`}
+              className="pixel-card p-0 overflow-hidden card-tilt reveal group"
               style={{ transitionDelay: `${i * 70}ms` }}
             >
               
               <div
-                className="relative h-32 overflow-hidden"
+                className="relative h-48 overflow-hidden"
                 style={{
-                  background: `linear-gradient(135deg, ${e.rarityColor}22, transparent), repeating-linear-gradient(45deg, #131826 0 8px, #0d1118 8px 16px)`,
+                  background: e.title === "Monster Event" ? "#0a0d14" : `linear-gradient(135deg, ${e.rarityColor}22, transparent), repeating-linear-gradient(45deg, #131826 0 8px, #0d1118 8px 16px)`,
                 }}
               >
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="scale-150 group-hover:scale-[1.8] transition-transform duration-500">
-                    <PixelIcon type={e.icon} size={5} />
-                  </div>
-                </div>
-                
-                <div
-                  className="absolute top-3 right-3 h-pixel text-[8px] px-2 py-1"
-                  style={{ background: e.rarityColor, color: "#07090d" }}
-                >
-                  ★ {e.rarity.toUpperCase()}
-                </div>
-               
-                <div className="absolute inset-0 overflow-hidden">
-                  <div
-                    className="absolute top-0 -left-1/2 h-full w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"
+                {e.title === "Monster Event" ? (
+                  <img
+                    src="/Gallery/monster event.png"
+                    alt="Monster Event"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
-                </div>
+                ) : (
+                  <img
+                    src="/Gallery/comingsoon.png"
+                    alt="Coming Soon"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
               </div>
 
               <div className="p-5">
@@ -377,12 +371,22 @@ const Events: React.FC = () => {
                   <span className="h-pixel text-[8px] text-white/50">{e.date}</span>
                 </div>
                 <h3 className="h-pixel text-sm text-white mb-3 leading-snug">{e.title}</h3>
-                <p className="text-white/70 text-sm mb-4 leading-relaxed">{e.desc}</p>
+                <p className="h-pixel text-white/70 text-sm mb-4 leading-relaxed">{e.desc}</p>
                 <div className="flex items-center justify-between pt-3 border-t-2 border-dashed border-[#1f2740]">
                   <span className="flex items-center gap-2 h-pixel text-[9px] text-[#ffcc4b]">
                     <PixelCoin size={3} /> {e.reward}
                   </span>
                 </div>
+                {e.title === "Monster Event" && (
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfWMj2WVqkcG0OtxLr0VXwym1nK9Q72f8U8A8UVqlftimzbdQ/viewform?usp=dialog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="animate-blink inline-block mt-4 px-4 py-2 bg-[#2ee892] text-[#07090d] h-pixel text-xs font-bold border-2 border-[#2ee892] hover:bg-[#1fba78] transition-colors"
+                  >
+                    REGISTER NOW
+                  </a>
+                )}
               </div>
             </article>
           ))}
