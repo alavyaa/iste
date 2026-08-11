@@ -367,6 +367,18 @@ const Events: React.FC = () => {
                     alt="Web Dev Workshop"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
+                ) : e.title === "Cybersec Workshop" ? (
+                  <img
+                    src="/Gallery/cyberw.png"
+                    alt="Cybersec Workshop"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : e.title === "AI Workshop" ? (
+                  <img
+                    src="/Gallery/aiw.png"
+                    alt="AI Workshop"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 ) : (
                   <img
                     src="/Gallery/comingsoon.png"
@@ -415,7 +427,7 @@ const Gallery: React.FC = () => {
     { title: "Competition", tag: "COMPETITION", image: "/Gallery/competition.jpeg", icon: "robot" as const },
     { title: "Vault Heist", tag: "COMPETITION", grad: "linear-gradient(135deg,#4be1ff,#2ee892)", icon: "trophy" as const },
     { title: "Code Clash", tag: "WORKSHOP",image: "/Gallery/session.jpg", icon: "code" as const },
-    { title: "Science Day", tag: "MEETUP", grad: "linear-gradient(135deg,#1aa3d6,#0a0d14)", icon: "innovation" as const },
+    { title: "Science Day", tag: "SCIENCE DAY", image: "/Gallery/sciday.jpeg", icon: "innovation" as const },
     { title: "Project Expo", tag: "EXPO", grad: "linear-gradient(135deg,#ff5fa2,#4be1ff)", icon: "rocket" as const },
   ];
 
