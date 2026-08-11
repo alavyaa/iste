@@ -627,13 +627,6 @@ const Contact: React.FC = () => {
                 </span>
               </div>
             </form>
-
-            <div className="mt-8 pt-4 border-t-2 border-dashed border-[#1f2740] flex flex-wrap gap-x-6 gap-y-2 h-mono text-base text-white/60">
-              <span className="text-[#2ee892]">CONNECT US</span>
-              <a href="https://github.com/ShauryaSingh1709" className="h-mono hover:text-[#2ee892]">GitHub</a>
-              <a href="#" className="h-mono hover:text-[#2ee892]">LinkedIn</a>
-              <a href="#" className="h-mono hover:text-[#2ee892]">Instagram</a>
-            </div>
           </div>
         </div>
       </div>

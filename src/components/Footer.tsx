@@ -9,7 +9,6 @@ const Footer: React.FC = () => (
       <div>
       </div>
       <div>
-        <div className="h-pixel text-[10px] text-[#ffcc4b] mb-3">CONNECT US</div>
         <ul className="flex items-center gap-8 text-white/70">
           <li>
             <a href="https://github.com/ShauryaSingh1709" aria-label="GitHub" className="hover:text-[#2ee892] transition-colors">
