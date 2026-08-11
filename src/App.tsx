@@ -144,11 +144,10 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-3 max-w-xl">
+          <div className="mt-10 grid grid-cols-2 gap-3 max-w-xl">
             {[
-              { label: "MEMBERS", value: "240+", color: "#2ee892" },
-              { label: "EVENTS", value: "36", color: "#4be1ff" },
-              { label: "ACHIEVEMENTS", value: "128", color: "#ffcc4b" },
+              { label: "MEMBERS", value: "30+", color: "#2ee892" },
+              { label: "EVENTS", value: "10+", color: "#4be1ff" },
             ].map((s) => (
               <div key={s.label} className="pixel-card p-3 sm:p-4">
                 <div className="h-pixel text-[8px] sm:text-[9px] text-white/60 mb-1">
@@ -275,7 +274,7 @@ const Events: React.FC = () => {
       rarityColor: "#ffcc4b",
       date: "COMING SOON",
       reward: "+500 XP",
-      desc: "",
+      desc: "Stay tuned for details.",
       icon: "rocket" as const,
       featured: true,
     },
@@ -356,6 +355,18 @@ const Events: React.FC = () => {
                     alt="Monster Event"
                     className="absolute inset-0 w-full h-full object-contain"
                   />
+                ) : e.title === "GitHub Workshop" ? (
+                  <img
+                    src="/Gallery/github.png"
+                    alt="GitHub Workshop"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : e.title === "Web Dev Workshop" ? (
+                  <img
+                    src="/Gallery/webd.png"
+                    alt="Web Dev Workshop"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 ) : (
                   <img
                     src="/Gallery/comingsoon.png"
@@ -376,17 +387,17 @@ const Events: React.FC = () => {
                   <span className="flex items-center gap-2 h-pixel text-[9px] text-[#ffcc4b]">
                     <PixelCoin size={3} /> {e.reward}
                   </span>
+                  {e.title === "Monster Event" && (
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfWMj2WVqkcG0OtxLr0VXwym1nK9Q72f8U8A8UVqlftimzbdQ/viewform?usp=dialog"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animate-sparkle px-3 py-1 bg-[#2ee892] text-[#07090d] h-pixel text-[10px] font-bold border-2 border-[#2ee892] hover:bg-[#1fba78] transition-colors"
+                    >
+                      REGISTER NOW
+                    </a>
+                  )}
                 </div>
-                {e.title === "Monster Event" && (
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfWMj2WVqkcG0OtxLr0VXwym1nK9Q72f8U8A8UVqlftimzbdQ/viewform?usp=dialog"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="animate-blink inline-block mt-4 px-4 py-2 bg-[#2ee892] text-[#07090d] h-pixel text-xs font-bold border-2 border-[#2ee892] hover:bg-[#1fba78] transition-colors"
-                  >
-                    REGISTER NOW
-                  </a>
-                )}
               </div>
             </article>
           ))}
@@ -397,96 +408,6 @@ const Events: React.FC = () => {
 };
 
 
-
-const Achievements: React.FC = () => {
- const [unlocked, setUnlocked] = useState<Record<string, boolean>>({
-  bestClub: true,
-  bestHackathon: true,
-  sponsored: true,
-});
- const list = [
-  {
-    id: "bestClub",
-    title: "Best Club / Society",
-    desc: "Recognized as the Best Club/Society of the year 2025 for outstanding technical events, innovation, and student engagement.",
-    icon: <PixelTrophy size={5} color="#ffcc4b" />,
-    tier: "2025",
-  },
-
-  {
-    id: "bestHackathon",
-    title: "Best Hackathon Club",
-    desc: "Honoured for organizing impactful hackathons and creating a thriving competitive programming and innovation culture.",
-    icon: <PixelMedal size={5} color="#4be1ff" ring="#2ee892" />,
-    tier: "Gold",
-  },
-
-  {
-    id: "sponsored",
-    title: "Most Sponsored Club",
-    desc: "Recognized for establishing valuable industry partnerships and securing the highest number of sponsorships.",
-    icon: <PixelCoin size={5} />,
-    tier: "Diamond",
-  },
-];
-
-  return (
-    <section id="achievements" className="relative py-20 sm:py-28 bg-[#0a0d14]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-       <SectionHeader
-  kicker="QUEST_05"
-  title="Our Achievements"
-  subtitle="Milestones that reflect our journey of innovation, excellence, and impact."
-/>
-
-        <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
-          {list.map((a, i) => {
-            const isUnlocked = !!unlocked[a.id];
-            return (
-               <div
-                key={a.id}
-                className="pixel-card p-5 text-left card-tilt reveal group"
-                style={{ transitionDelay: `${i * 50}ms` }}
-                aria-pressed={isUnlocked}
-              >
-                <div className="relative h-24 grid place-items-center mb-3 bg-[#0d1118] border-4 border-[#0a0d14]">
-                  <div
-                    className={`transition-all duration-300 ${isUnlocked ? "group-hover:scale-110 animate-pulse-glow" : "grayscale"
-                      }`}
-                  >
-                    {a.icon}
-                  </div>
-                  {isUnlocked && (
-                    <div className="absolute top-2 right-2">
-                      <PixelStar size={2} className="animate-twinkle" />
-                    </div>
-                  )}
-                </div>
-                <div className="h-pixel text-[9px] text-[#ffcc4b] mb-1">★ {a.tier.toUpperCase()}</div>
-                <h3 className="h-pixel text-[11px] text-white mb-2 leading-snug">{a.title}</h3>
-                <p className="text-white/60 text-xs leading-relaxed">{a.desc}</p>
-              </div>
-            );
-          })}
-        </div>
-
-
-        <div className="mt-10 max-w-md mx-auto reveal">
-          <div className="pixel-card p-4 flex items-center gap-4 bg-[#0d1118]">
-            <div className="animate-coin">
-              <PixelCoin size={4} />
-            </div>
-            <div className="flex-1">
-              <div className="h-pixel text-[9px] text-[#ffcc4b]">★ ISTE HALL OF FAME</div>
-              <div className="h-mono text-[#2ee892] text-lg">Recognized. Rewarded. Respected.</div>
-            </div>
-            <PixelHeart size={3} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const Gallery: React.FC = () => {
   const items = [
@@ -727,7 +648,6 @@ const App: React.FC = () => {
         <PromoVideo />
         <About />
         <Events />
-        <Achievements />
         <Gallery />
         <Contact />
       </main>

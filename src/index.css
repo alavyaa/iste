@@ -144,6 +144,10 @@ html, body {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
 @keyframes shine {
   0% { transform: translateX(-120%) skewX(-20deg); }
   100% { transform: translateX(220%) skewX(-20deg); }
@@ -167,6 +171,7 @@ html, body {
 .animate-twinkle { animation: twinkle 2.4s ease-in-out infinite; }
 .animate-walk { animation: walkBob 0.45s steps(2) infinite; }
 .animate-blink { animation: blink 1s steps(1) infinite; }
+.animate-sparkle { animation: sparkle 1.2s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulseGlow 2.4s ease-in-out infinite; }
 .animate-coin { animation: coinFlip 2.4s linear infinite; }
 .animate-shine { animation: shine 2.6s ease-in-out infinite; }
