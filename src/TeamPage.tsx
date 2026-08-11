@@ -287,11 +287,6 @@ const departmentsData: Department[] = [
         image: lakshay ,
       },
       {
-        name: "LAKSHAY CHOUDHARY",
-        role: "CORE MEMBER",
-        image: lakshay1 ,
-      },
-      {
         name: "MAHI",
         role: "CORE MEMBER",
         image: Mahi ,
@@ -320,6 +315,11 @@ const departmentsData: Department[] = [
         name: "JAGRITI",
         role: "CORE MEMBER",
         image: jagriti ,
+      },
+      {
+        name: "LAKSHAY CHOUDHARY",
+        role: "CORE MEMBER",
+        image: lakshay1 ,
       },
     ],
   },
