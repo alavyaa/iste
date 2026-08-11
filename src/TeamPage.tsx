@@ -9,11 +9,11 @@ import aditya from "./assets/images/aditya.jpeg";
 import AG from "./assets/images/AG.jpeg";
 import alavya from "./assets/images/alavya.jpeg";
 import anmol from "./assets/images/anmol.jpeg";
-import Hrithik from "./assets/images/Hrithik.jpeg";
-
+import Adil from "./assets/images/Adil.jpeg";
 import arnab from "./assets/images/arnab.jpeg";
 import arpan from "./assets/images/arpan.jpeg";
 import arsh from "./assets/images/arsh-dhaliwal.webp";
+import Darshi from "./assets/images/Darshi.jpeg";
 
 
 
@@ -192,7 +192,7 @@ const departmentsData: Department[] = [
       {
         name: "DARSHI",
         role: "CORE MEMBER",
-        image: member ,
+        image: Darshi ,
       },
       {
         name: "KHUSHI",
@@ -208,7 +208,7 @@ const departmentsData: Department[] = [
       {
         name: "MD. ADIL",
         role: "CORE MEMBER",
-        image: member ,
+        image: Adil ,
       },
       {
         name: "RITU",
@@ -331,6 +331,57 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({
   index,
 }) => {
   const isReversed = index % 2 !== 0;
+
+  if (member.compact) {
+    return (
+      <div
+        className={`flex flex-row gap-4 md:gap-6 items-center border border-slate-700/50 bg-[#131c31]/80 p-4 sm:p-5 rounded-sm relative overflow-hidden group transition-all duration-500 hover:border-[#00ffc8]/30`}
+      >
+        <div className="w-28 h-28 sm:w-36 sm:h-36 flex-shrink-0">
+          <div className="relative w-full h-full border border-slate-700/60 rounded-sm overflow-hidden bg-[#0a1020]">
+            <PixelRevealImage
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover"
+              pixelSize={16}
+              revealDuration={700}
+            />
+            <div className="h-1 bg-gradient-to-r from-[#00ffc8] via-[#00e5ff] to-transparent" />
+          </div>
+        </div>
+
+        <div className="flex-1 flex flex-col justify-center gap-2">
+          <h3
+            className="text-white text-base sm:text-lg font-bold tracking-wide"
+            style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
+          >
+            {member.name}
+          </h3>
+          <div className="flex items-center gap-3">
+            {member.linkedin && (
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-8 h-8 rounded-sm border border-slate-700/60 text-slate-400 hover:text-[#2ee892] hover:border-[#2ee892]/40 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            )}
+            <span
+              className="text-[#00ffc8] text-[10px] sm:text-xs tracking-widest uppercase"
+              style={{ fontFamily: '"Press Start 2P", "Courier New", monospace' }}
+            >
+              {member.title}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
