@@ -10,6 +10,8 @@ import AG from "./assets/images/AG.jpeg";
 import alavya from "./assets/images/alavya.jpeg";
 import anmol from "./assets/images/anmol.jpeg";
 import Hrithik from "./assets/images/Hrithik.jpeg";
+import Darshi from "./assets/images/Darshi.jpeg";
+import Adil from "./assets/images/Adil.jpeg";
 import arnab from "./assets/images/arnab.jpeg";
 import arpan from "./assets/images/arpan.jpeg";
 import arsh from "./assets/images/arsh-dhaliwal.webp";
@@ -45,7 +47,6 @@ import ranjeet from "./assets/images/ranjeet.jpeg";
 import ritu from "./assets/images/ritu.jpeg";
 
 import samriti from "./assets/images/samriti.jpeg";
-import sarika from "./assets/images/sarika.jpeg";
 import shaurya from "./assets/images/shaurya.jpeg";
 import sanya from "./assets/images/Sanya.jpeg";
 import kastab from "./assets/images/kastab.jpeg";
@@ -189,6 +190,11 @@ const departmentsData: Department[] = [
     tag: "PIXEL_MAGES",
     members: [
       {
+        name: "DARSHI",
+        role: "CORE MEMBER",
+        image: Darshi ,
+      },
+      {
         name: "KHUSHI",
         role: "CORE MEMBER",
         image: khushi ,
@@ -199,6 +205,11 @@ const departmentsData: Department[] = [
     name: "Logistics Team",
     tag: "LORE_KEEPERS",
     members: [
+      {
+        name: "MD. ADIL",
+        role: "CORE MEMBER",
+        image: Adil ,
+      },
       {
         name: "RITU",
         role: "CORE MEMBER",
@@ -240,18 +251,13 @@ const departmentsData: Department[] = [
         role: "CORE MEMBER",
         image: priyansh ,
       },
-       {
-        name: "HIMANSHU",
-        role: "CORE MEMBER",
-        image: himanshu ,
-      },
-       {
-        name: "SARIKA",
-        role: "CORE MEMBER",
-        image: sarika ,
-      },
-       {
-        name: "GAURAV",
+        {
+          name: "HIMANSHU",
+          role: "CORE MEMBER",
+          image: himanshu ,
+        },
+        {
+          name: "GAURAV",
         role: "CORE MEMBER",
         image: gaurav ,
       },
