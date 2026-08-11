@@ -15,7 +15,6 @@ const Nav: React.FC = () => {
   { label: "About", href: "/#about" },
   { label: "Events", href: "/#events" },
   { label: "Team", href: "/team" },
-  { label: "Achievements", href: "/#achievements" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Contact", href: "/#contact" },
 ];

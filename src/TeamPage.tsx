@@ -6,7 +6,6 @@ import isteLogo from "./assets/iste.png";
 import footerLogo from "./assets/iste_footer.png";
 
 import aditya from "./assets/images/aditya.jpeg";
-import AG from "./assets/images/AG.jpeg";
 import alavya from "./assets/images/alavya.jpeg";
 import anmol from "./assets/images/anmol.jpeg";
 import Hrithik from "./assets/images/Hrithik.jpeg";
@@ -14,7 +13,7 @@ import Darshi from "./assets/images/Darshi.jpeg";
 import Adil from "./assets/images/Adil.jpeg";
 import arnab from "./assets/images/arnab.jpeg";
 import arpan from "./assets/images/arpan.jpeg";
-import arsh from "./assets/images/arsh-dhaliwal.webp";
+
 
 
 
@@ -35,7 +34,6 @@ import kushika from "./assets/images/kushika.jpeg";
 import lakshay from "./assets/images/lakshay.jpeg";
 
 import manish from "./assets/images/manish.jpeg";
-import member from "./assets/images/member.jpeg";
 
 import navin from "./assets/images/navin.jpeg";
 
@@ -52,7 +50,6 @@ import sanya from "./assets/images/Sanya.jpeg";
 import kastab from "./assets/images/kastab.jpeg";
 
 import vashu from "./assets/images/vashu.jpeg";
-import vc from "./assets/images/vc.jpeg";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -73,6 +70,7 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
+  linkedin?: string;
 }
 
 interface Department {
@@ -83,31 +81,27 @@ interface Department {
 
 
 
-const leadershipData: LeadershipMember[] = [
-  {
-label: "ISTE CONVEYOR",
-name: "Dr. Anmol Gautam",
-title: "Head of Department",
-description:
-"The Head of Department provides technical mentorship, academic guidance, and departmental leadership, supporting students in executing ideas that bridge creativity, innovation, and real-world relevance.",
-image: anmol ,
-linkedin: "#",
-compact: true,
-},
-
-  {
-label: "ISTE FACULTY COORDINATOR",
-name: "Sanya Batra",
-title: "Faculty Coordinator",
-description:
-"The Faculty Coordinator serves as a mentor and guide, fostering a culture of innovation, collaboration, and technical excellence within the student community, while facilitating the execution of impactful projects and initiatives.",
-image: sanya ,
-linkedin: "#",
-compact: true,
-},
-];
+const leadershipData: LeadershipMember[] = [];
 
 const departmentsData: Department[] = [
+  {
+    name: "Leadership",
+    tag: "LEADERSHIP",
+    members: [
+      {
+        name: "Dr. Anmol Gautam",
+        role: "ISTE CONVEYOR",
+        image: anmol ,
+        linkedin: "https://www.linkedin.com/in/dr-anamol-gautam-b2953062/",
+      },
+      {
+        name: "Sanya Batra",
+        role: "Faculty Coordinator",
+        image: sanya ,
+        linkedin: "https://www.linkedin.com/in/sanyabatra0607/",
+      },
+    ],
+  },
   {
     name: "Core Team",
     tag: "CORE_OPS",
@@ -560,6 +554,7 @@ const DepartmentSection: React.FC<DepartmentSectionProps> = ({
             name={member.name}
             role={member.role}
             image={member.image}
+            linkedin={member.linkedin}
           />
         ))}
       </div>
@@ -703,29 +698,6 @@ const TeamPage: React.FC = () => {
         </div>
 
        
-        <div className="mb-16 sm:mb-20 md:mb-24">
-         
-          <div className="flex items-center gap-4 mb-8 sm:mb-10">
-            <div className="border border-[#00e5ff]/40 px-3 py-1.5 bg-[#0a1020] rounded-sm">
-              <span
-                className="text-[#00e5ff] text-[9px] sm:text-[10px] tracking-widest"
-                style={{
-                  fontFamily: '"Press Start 2P", "Courier New", monospace',
-                }}
-              >
-                LEADERSHIP
-              </span>
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-r from-[#00e5ff]/30 via-slate-700/50 to-transparent" />
-          </div>
-
-          <div className="space-y-6 sm:space-y-8">
-            {leadershipData.map((member, index) => (
-              <LeadershipSection key={index} member={member} index={index} />
-            ))}
-          </div>
-        </div>
-
         <div className="space-y-14 sm:space-y-16 md:space-y-20">
           {departmentsData.map((department, index) => (
             <DepartmentSection
