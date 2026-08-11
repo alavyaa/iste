@@ -37,13 +37,29 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
       img.onload = null;
     };
   }, [src]);
-
   const drawPixelated = useCallback(
     (ctx: CanvasRenderingContext2D, img: HTMLImageElement, w: number, h: number, level: number) => {
+      const imgRatio = img.width / img.height;
+      const containerRatio = w / h;
+
+      let drawW = w;
+      let drawH = h;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      if (imgRatio > containerRatio) {
+        drawH = h;
+        drawW = h * imgRatio;
+        offsetX = (w - drawW) / 2;
+      } else {
+        drawW = w;
+        drawH = w / imgRatio;
+        offsetY = (h - drawH) / 2;
+      }
 
       if (level >= 0.99) {
         ctx.imageSmoothingEnabled = true;
-        ctx.drawImage(img, 0, 0, w, h);
+        ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
         return;
       }
 
@@ -51,14 +67,12 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
 
       if (currentPixelSize <= 1) {
         ctx.imageSmoothingEnabled = true;
-        ctx.drawImage(img, 0, 0, w, h);
+        ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
         return;
       }
 
-    
-      const smallW = Math.ceil(w / currentPixelSize);
-      const smallH = Math.ceil(h / currentPixelSize);
-
+      const smallW = Math.ceil(drawW / currentPixelSize);
+      const smallH = Math.ceil(drawH / currentPixelSize);
 
       const offscreen = document.createElement("canvas");
       offscreen.width = smallW;
@@ -69,14 +83,13 @@ const PixelRevealImage: React.FC<PixelRevealImageProps> = ({
       offCtx.imageSmoothingEnabled = false;
       offCtx.drawImage(img, 0, 0, smallW, smallH);
 
-
       ctx.imageSmoothingEnabled = false;
-      ctx.drawImage(offscreen, 0, 0, smallW, smallH, 0, 0, w, h);
+      ctx.drawImage(offscreen, 0, 0, smallW, smallH, offsetX, offsetY, drawW, drawH);
 
       if (level > 0.5) {
         ctx.imageSmoothingEnabled = true;
         ctx.globalAlpha = (level - 0.5) * 2;
-        ctx.drawImage(img, 0, 0, w, h);
+        ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
         ctx.globalAlpha = 1;
       }
     },
