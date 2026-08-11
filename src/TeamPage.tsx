@@ -9,11 +9,10 @@ import aditya from "./assets/images/aditya.jpeg";
 import AG from "./assets/images/AG.jpeg";
 import alavya from "./assets/images/alavya.jpeg";
 import anmol from "./assets/images/anmol.jpeg";
-import Adil from "./assets/images/Adil.jpeg";
+import Hrithik from "./assets/images/Hrithik.jpeg";
 import arnab from "./assets/images/arnab.jpeg";
 import arpan from "./assets/images/arpan.jpeg";
 import arsh from "./assets/images/arsh-dhaliwal.webp";
-import Darshi from "./assets/images/Darshi.jpeg";
 
 
 
@@ -190,11 +189,6 @@ const departmentsData: Department[] = [
     tag: "PIXEL_MAGES",
     members: [
       {
-        name: "DARSHI",
-        role: "CORE MEMBER",
-        image: Darshi ,
-      },
-      {
         name: "KHUSHI",
         role: "CORE MEMBER",
         image: khushi ,
@@ -205,11 +199,6 @@ const departmentsData: Department[] = [
     name: "Logistics Team",
     tag: "LORE_KEEPERS",
     members: [
-      {
-        name: "MD. ADIL",
-        role: "CORE MEMBER",
-        image: Adil ,
-      },
       {
         name: "RITU",
         role: "CORE MEMBER",
