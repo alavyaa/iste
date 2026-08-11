@@ -89,7 +89,7 @@ const departmentsData: Department[] = [
     tag: "LEADERSHIP",
     members: [
       {
-        name: "Dr. Anmol Gautam",
+        name: "Dr. Anamol Gautam",
         role: "ISTE CONVEYOR",
         image: anmol ,
         linkedin: "https://www.linkedin.com/in/dr-anamol-gautam-b2953062/",
