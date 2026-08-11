@@ -32,10 +32,17 @@ import khushi from "./assets/images/khushi.png";
 import kushika from "./assets/images/kushika.jpeg";
 
 import lakshay from "./assets/images/lakshay.jpeg";
+import lakshay1 from "./assets/images/lakshay1.jpeg";
+
+import Mahi from "./assets/images/Mahi.jpeg";
 
 import manish from "./assets/images/manish.jpeg";
+import member from "./assets/images/member.jpeg";
 
 import navin from "./assets/images/navin.jpeg";
+
+import prachi from "./assets/images/prachi.jpeg";
+import pragati from "./assets/images/pragati.jpeg";
 
 import pranjal from "./assets/images/pranjal.jpeg";
 import pratyush from "./assets/images/pratyush.jpeg";
@@ -46,7 +53,9 @@ import ritu from "./assets/images/ritu.jpeg";
 
 import samriti from "./assets/images/samriti.jpeg";
 import shaurya from "./assets/images/shaurya.jpeg";
+import shivangi from "./assets/images/shivangi.jpeg";
 import sanya from "./assets/images/Sanya.jpeg";
+import sran from "./assets/images/sran.jpeg";
 import kastab from "./assets/images/kastab.jpeg";
 
 import vashu from "./assets/images/vashu.jpeg";
@@ -117,21 +126,27 @@ const departmentsData: Department[] = [
         image: pranjal ,
       },
        {
-        name: "ARPAN",
-        role: "CORE MEMBER",
-        image: arpan ,
-      },
-       {
-         name: "NAVIN",
+         name: "ARPAN",
          role: "CORE MEMBER",
-         image: navin ,
+         image: arpan ,
        },
        {
          name: "KASTAB",
          role: "CORE MEMBER",
          image: kastab ,
        },
-       {
+    ],
+  },
+  {
+    name: "Documentation",
+    tag: "DOCS_DIVISION",
+    members: [
+      {
+        name: "NAVIN",
+        role: "CORE MEMBER",
+        image: navin ,
+      },
+      {
         name: "ARNAB",
         role: "CORE MEMBER",
         image: arnab ,
@@ -225,16 +240,11 @@ const departmentsData: Department[] = [
         role: "CORE MEMBER",
         image: ranjeet ,
       },
-      {
-        name: "ADITYA",
-        role: "CORE MEMBER",
-        image: aditya ,
-      },
        {
-        name: "DURGESH",
-        role: "CORE MEMBER",
-        image: durgesh ,
-      },
+         name: "DURGESH",
+         role: "CORE MEMBER",
+         image: durgesh ,
+       },
        {
         name: "MANISH",
         role: "CORE MEMBER",
@@ -256,16 +266,57 @@ const departmentsData: Department[] = [
         image: gaurav ,
       },
        {
-        name: "PRATYUSH",
+         name: "PRATYUSH",
+         role: "CORE MEMBER",
+         image: pratyush ,
+       },
+    ],
+  },
+  {
+    name: "Marketing",
+    tag: "BRAND_SQUAD",
+    members: [
+      {
+        name: "ADITYA",
         role: "CORE MEMBER",
-        image: pratyush ,
+        image: aditya ,
       },
-       {
+      {
         name: "LAKSHAY",
         role: "CORE MEMBER",
         image: lakshay ,
       },
-       {
+      {
+        name: "LAKSHAY CHOUDHARY",
+        role: "CORE MEMBER",
+        image: lakshay1 ,
+      },
+      {
+        name: "MAHI",
+        role: "CORE MEMBER",
+        image: Mahi ,
+      },
+      {
+        name: "SHIVANGI",
+        role: "CORE MEMBER",
+        image: shivangi ,
+      },
+      {
+        name: "PRACHII",
+        role: "CORE MEMBER",
+        image: prachi ,
+      },
+      {
+        name: "PRAGATI",
+        role: "CORE MEMBER",
+        image: pragati ,
+      },
+      {
+        name: "SRAN",
+        role: "CORE MEMBER",
+        image: sran ,
+      },
+      {
         name: "JAGRITI",
         role: "CORE MEMBER",
         image: jagriti ,
